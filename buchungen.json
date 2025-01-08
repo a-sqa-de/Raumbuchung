@@ -1,0 +1,197 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('example@domain.com')/events",
+  "value": [
+    {
+      "id": "AAMkAGVmMDEzZmYtY2EyNS00YjU3LTg2ZTItZjNkYzA5ZGE3ZmIzBgFRAAgI2yEAAAA=",
+      "subject": "Team Meeting",
+      "organizer": {
+        "emailAddress": {
+          "name": "Max Mustermann",
+          "address": "max.mustermann@example.com"
+        }
+      },
+      "start": {
+        "dateTime": "2025-01-07T09:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "end": {
+        "dateTime": "2025-01-07T10:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "location": {
+        "displayName": "Konferenzraum 1"
+      },
+      "attendees": [
+        {
+          "emailAddress": {
+            "name": "Anna Müller",
+            "address": "anna.mueller@example.com"
+          },
+          "type": "required"
+        },
+        {
+          "emailAddress": {
+            "name": "John Doe",
+            "address": "john.doe@example.com"
+          },
+          "type": "optional"
+        }
+      ],
+      "isOnlineMeeting": true,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/abc123"
+      }
+    },
+    {
+      "id": "AAMkAGVmMDEzZmYtY2EyNS00YjU3LTg2ZTItZjNkYzA5ZGE3ZmI0BgFRAAgI2yEAAAA=",
+      "subject": "Projektbesprechung",
+      "organizer": {
+        "emailAddress": {
+          "name": "Anna Müller",
+          "address": "anna.mueller@example.com"
+        }
+      },
+      "start": {
+        "dateTime": "2025-01-08T14:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "end": {
+        "dateTime": "2025-01-08T15:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "location": {
+        "displayName": "Online Meeting"
+      },
+      "attendees": [
+        {
+          "emailAddress": {
+            "name": "Max Mustermann",
+            "address": "max.mustermann@example.com"
+          },
+          "type": "required"
+        }
+      ],
+      "isOnlineMeeting": true,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/xyz456"
+      }
+    },
+    {
+      "id": "AAMkAGVmMDEzZmYtY2EyNS00YjU3LTg2ZTItZjNkYzA5ZGE3ZmI5BgFRAAgI2yEAAAA=",
+      "subject": "Jahresabschlussbesprechung",
+      "organizer": {
+        "emailAddress": {
+          "name": "John Doe",
+          "address": "john.doe@example.com"
+        }
+      },
+      "start": {
+        "dateTime": "2025-01-09T10:30:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "end": {
+        "dateTime": "2025-01-09T12:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "location": {
+        "displayName": "Meetingraum 2"
+      },
+      "attendees": [
+        {
+          "emailAddress": {
+            "name": "Lisa Schmidt",
+            "address": "lisa.schmidt@example.com"
+          },
+          "type": "required"
+        },
+        {
+          "emailAddress": {
+            "name": "Max Mustermann",
+            "address": "max.mustermann@example.com"
+          },
+          "type": "optional"
+        }
+      ],
+      "isOnlineMeeting": false
+    },
+    {
+      "id": "AAMkAGVmMDEzZmYtY2EyNS00YjU3LTg2ZTItZjNkYzA5ZGE3ZmIwBgFRAAgI2yEAAAA=",
+      "subject": "Produktpräsentation",
+      "organizer": {
+        "emailAddress": {
+          "name": "Lisa Schmidt",
+          "address": "lisa.schmidt@example.com"
+        }
+      },
+      "start": {
+        "dateTime": "2025-01-10T09:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "end": {
+        "dateTime": "2025-01-10T10:30:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "location": {
+        "displayName": "Hauptkonferenzraum"
+      },
+      "attendees": [
+        {
+          "emailAddress": {
+            "name": "Anna Müller",
+            "address": "anna.mueller@example.com"
+          },
+          "type": "required"
+        },
+        {
+          "emailAddress": {
+            "name": "John Doe",
+            "address": "john.doe@example.com"
+          },
+          "type": "required"
+        }
+      ],
+      "isOnlineMeeting": false
+    },
+    {
+      "id": "AAMkAGVmMDEzZmYtY2EyNS00YjU3LTg2ZTItZjNkYzA5ZGE3ZmIyBgFRAAgI2yEAAAA=",
+      "subject": "Strategie-Meeting",
+      "organizer": {
+        "emailAddress": {
+          "name": "Anna Müller",
+          "address": "anna.mueller@example.com"
+        }
+      },
+      "start": {
+        "dateTime": "2025-01-11T13:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "end": {
+        "dateTime": "2025-01-11T14:00:00",
+        "timeZone": "Europe/Berlin"
+      },
+      "location": {
+        "displayName": "Online Meeting"
+      },
+      "attendees": [
+        {
+          "emailAddress": {
+            "name": "Max Mustermann",
+            "address": "max.mustermann@example.com"
+          },
+          "type": "required"
+        },
+        {
+          "emailAddress": {
+            "name": "Lisa Schmidt",
+            "address": "lisa.schmidt@example.com"
+          },
+          "type": "optional"
+        }
+      ],
+      "isOnlineMeeting": true,
+      "onlineMeeting": {
+        "joinUrl": "https://teams.microsoft.com/l/meetup-join/def789"
+      }
+    }
+  ]
+}

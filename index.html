@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminübersicht</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <header>
       <div id="buchung" class="buchen">
         <button><a href="buchung.html" >Raum buchen</a></button>
       </div>
-        
     </header>
 
-    <div class="container">
-        <div 
-        id="current-event" class="event-card current-event hidden">
-          <h2>Aktuelles Event</h2>
-          <p id="current-creator"></p>
-          <p id="current-time"></p>
-        </div>
-
-        <div id="future-events" class="future-events"></div>
-      </div>
+ 
+    <div id="current-event" class="hidden">
+      <h2 id="current-creator"></h2>
+      <p id="current-organizer"></p>
+      <p id="current-time"></p>
+      <p id="current-location"></p>
+    </div>
+    
+      <div id="future-events"></div>
     
       <footer>
         <div id="last-updated" class="last-updated">Letzte Aktualisierung: --:--:--</div>
@@ -32,4 +31,3 @@
 
       <script src="index.js"></script>
 </body>
-</html>

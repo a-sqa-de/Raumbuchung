@@ -1,110 +1,105 @@
-    /* Globale Styles */
-
-  body {
-    font-family: Arial, sans-serif;
-    margin: 12px;
-    padding: 20px;;
-    background-color: #ebedee;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  header {
-    background-color: #00a3da;
-    margin-bottom: 18px;
-    left: 20px;
-    right: 20px;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    background-color: #00a3da;
-    box-sizing: border-box;
-    color: white;
-    position: fixed;
-    left: 20px;
-    right: 20px;
-    bottom: 0;
-  }
-
-  .formular-text {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-   /* Dynamischer Style für die Pyramide */
-   .event-card {
-    position: relative;
-    align-items: center;
-  }
-
-    /* Style für aktuelles Event */
-  #current-event {
-    background-color: #00a3da;
-    color: azure;
-    text-align: center;
-    font-size: larger;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-color: #333;
-    border-style: double;
-  }
-
-    /* Style für Aussehen der zukünftigen Eventkarten */  
-  .event-card {
-    background-color: #e2e6ea;
-    color: #333;
-    padding: 15px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-      /* Style für zukünftige Events */
-  #future-events {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-    /* Style für Name des Creators */
-  .event-card .event-creator {
-    font-weight: bold;
-    font-size: medium;
-  }
-
-   /* Style für die Zeitangabe des Events */
-  .event-card .event-time {
-    font-size: 12px;
-    color: #666;
-  }
-
-  .last-updated {
-    color: white;
-    text-align: center;
-    font-size: medium;
-    padding-top: 10px;
-  }
-
-.copyright {
-  font-size: xx-small;
-  text-align: right;
-  padding-right: 20px;
-  padding-bottom: 10px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 12px;
+  padding: 20px;;
+  background-color: #ebedee;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+header {
+  background-color: #00a3da;
+  margin-bottom: 18px;
+  left: 20px;
+  right: 20px;
+}
 
-  
-  
-  
-  
+footer {
+  font-size: 0.8rem;
+  background-color: #00a3da;
+  box-sizing: border-box;
+  color: white;
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+}
+
+.formular-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hidden {
+  display: none;
+}
+
+ /* Dynamischer Style für die Pyramide */
+ .event-card {
+ 
+  border-radius: 8px;
+  width: 80%; /* Begrenze die Breite */
+  text-align: center; /* Zentrierter Text */
+  position: relative;
+  align-items: center;
+}
+
+  /* Style für aktuelles Event */
+#current-event {
+  background-color: #00a3da;
+  color: azure;
+  text-align: center;
+  font-size: larger;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-color: #333;
+  border-style: double;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+  /* Style für Aussehen der zukünftigen Eventkarten */  
+.event-card {
+  background-color: #e2e6ea;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+    /* Style für zukünftige Events */
+#future-events {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+  /* Style für Name des Creators */
+.event-card .event-creator {
+  font-weight: bold;
+  font-size: medium;
+}
+
+ /* Style für die Zeitangabe des Events */
+.event-card .event-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.last-updated {
+  color: white;
+  text-align: center;
+  font-size: medium;
+  padding-top: 10px;
+}
+
+.copyright {
+font-size: xx-small;
+text-align: right;
+padding-right: 20px;
+padding-bottom: 10px;
+}
