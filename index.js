@@ -65,13 +65,13 @@ async function updateEvents() {
       currentEventContainer.querySelector("#current-creator").textContent = `Titel: ${currentEvent.subject}`;
       currentEventContainer.querySelector(
         "#current-organizer"
-      ).textContent = `Organisator: ${currentEvent.organizer.emailAddress.name}`;
+      ).textContent = `Organisator: ${currentEvent.organizer.name}`;
       currentEventContainer.querySelector(
         "#current-time"
       ).textContent = `Zeit: ${formatTime(currentEvent.start.dateTime)} - ${formatTime(currentEvent.end.dateTime)}`;
       currentEventContainer.classList.remove("hidden");
     } else {
-      currentEventContainer.querySelector("#current-creator").textContent = "Kein Event vorhanden";
+      currentEventContainer.querySelector("#current-creator").textContent = "Derzeit kein Event vorhanden";
       currentEventContainer.querySelector("#current-time").textContent = "";
       currentEventContainer.classList.remove("hidden");
     }
@@ -95,7 +95,7 @@ async function updateEvents() {
       // Karteninhalt
       card.innerHTML = `
         <div><strong>Titel:</strong> ${event.subject || "Kein Titel"}</div>
-        <div><strong>Organisator:</strong> ${event.organizer.emailAddress.name}</div>
+        <div><strong>Organisator:</strong> ${event.organizer.name}</div>
         <div><strong>Zeit:</strong> ${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)} ${dayDisplay}</div>
       `;
 
@@ -154,6 +154,91 @@ function updateLastUpdated() {
     console.error("Container für 'last-updated' nicht gefunden!");
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Elemente auswählen
+  const toggleViewButton = document.getElementById("toggle-view");
+  const cardView = document.getElementById("card-view");
+  const calendarView = document.getElementById("calendar-view");
+  const calendarEl = document.getElementById("calendar");
+
+  let isCalendarView = false;
+  let calendar;
+
+  // Umschaltlogik für Ansichten
+  toggleViewButton.addEventListener("click", () => {
+    isCalendarView = !isCalendarView;
+
+    if (isCalendarView) {
+      // Kalenderansicht aktivieren
+      cardView.style.display = "none";
+      calendarView.style.display = "block";
+      toggleViewButton.textContent = "Wechsle zur Kartenansicht";
+      
+      // Kalender initialisieren, wenn noch nicht geschehen
+      if (!calendar) {
+        calendar = new FullCalendar.Calendar(calendarEl, {
+          contentHeight: "auto",
+          initialView: "dayGridWeek",
+          locale: "de", //<--- Lokalisierung, klappt nur irgendwie nicht...
+          headerToolbar: {
+            left: "", //eigentlich steht hier "prev,next today", doppelt aber, wenn "right:" deaktiviert ist. Daher leer!
+            center: "title",
+            // Anzeige für "right:" fehlerhaft wenn man zwischen day,week,month Ansichten wechselt - daher auskommentiert
+            /*right: "dayGridMonth,timeGridWeek,timeGridDay",*/ 
+          },
+          events: [], // Events später hinzufügen
+        });
+      }
+      
+      
+      calendar.render();
+    } else {
+      // Kartenansicht aktivieren
+      calendarView.style.display = "none";
+      cardView.style.display = "block";
+      toggleViewButton.textContent = "Wechsle zur Kalenderansicht";
+    }
+  });
+
+  // Funktion zum Laden und Anzeigen der Events
+  async function loadAndDisplayEvents() {
+    try {
+      const response = await fetch("buchungen.json");
+      if (!response.ok) {
+        throw new Error("Fehler beim Laden der JSON-Daten");
+      }
+
+      const graphData = await response.json();
+      const bookings = graphData.value;
+
+      // Events für den Kalender formatieren
+      const calendarEvents = bookings.map(booking => ({
+        title: booking.subject,
+        start: booking.start.dateTime,
+        end: booking.end.dateTime
+      }));
+
+      // Wenn der Kalender initialisiert ist, Events hinzufügen
+      if (calendar) {
+        calendar.removeAllEvents();
+        calendar.addEventSource(calendarEvents);
+      }
+
+      // Kartenansicht aktualisieren
+      updateEvents(bookings);
+    } catch (error) {
+      console.error("Fehler beim Verarbeiten der Daten:", error);
+    }
+  }
+
+  // Initialer Aufruf der Funktionen
+  loadAndDisplayEvents();
+
+  // Periodische Aktualisierung
+  setInterval(loadAndDisplayEvents, 1000);
+});
+
 
 // Initialer Aufruf der Funktionen
 updateEvents();

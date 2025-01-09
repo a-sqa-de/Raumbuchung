@@ -1,105 +1,205 @@
+/* Grundstruktur */
 body {
   font-family: Arial, sans-serif;
-  margin: 12px;
-  padding: 20px;;
+  margin: 0;
+  padding: 0;
   background-color: #ebedee;
+  overflow-x: hidden; /* Kein horizontales Scrollen */
+  overflow-y: hidden; /* Kein vertikales Scrollen */
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-}
+/* Header */
 header {
-  background-color: #00a3da;
-  margin-bottom: 18px;
-  left: 20px;
-  right: 20px;
-}
-
-footer {
-  font-size: 0.8rem;
-  background-color: #00a3da;
-  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: #007bb5; /* Dominantes Blau */
   color: white;
-  position: fixed;
-  left: 20px;
-  right: 20px;
-  bottom: 0;
-}
-
-.formular-text {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.hidden {
-  display: none;
-}
-
- /* Dynamischer Style für die Pyramide */
- .event-card {
- 
-  border-radius: 8px;
-  width: 80%; /* Begrenze die Breite */
-  text-align: center; /* Zentrierter Text */
-  position: relative;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-  /* Style für aktuelles Event */
-#current-event {
-  background-color: #00a3da;
-  color: azure;
-  text-align: center;
-  font-size: larger;
-  padding: 20px;
+/* Raum buchen Button im Header */
+header button {
+  background-color: white;
+  color: #007bb5;
+  border: 2px solid #007bb5;
+  border-radius: 8px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+header button:hover {
+  background-color: #007bb5;
+  color: white;
+}
+
+/* Formular */
+.form-container {
+  max-width: 33%; /* Breiter als vorher, aber nicht zu breit */
+  margin: 70px auto; /* Abstand vom Header */
+  padding: 12px;
+  background-color: #ffffff;
   border-radius: 12px;
-  margin-bottom: 20px;
-  border-color: #333;
-  border-style: double;
-  margin-left: 15%;
-  margin-right: 15%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bb5;
+  overflow: hidden;
 }
 
-  /* Style für Aussehen der zukünftigen Eventkarten */  
+.hint-text {
+  text-align: center;
+  color: #d9534f;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Eingabefelder */
+.field-container {
+  margin-bottom: 20px;
+}
+
+.field-container label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.field-container input,
+.field-container select {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f8f9fa;
+}
+
+.field-container input:focus,
+.field-container select:focus {
+  border-color: #007bb5;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Submit-Button */
+.submit-button {
+  display: block;
+  margin: 20px auto 0;
+  background: linear-gradient(90deg, #007bb5, #005b8c);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #005b8c;
+}
+
+/* Current Event */
+#current-event {
+  background: linear-gradient(90deg, #007bb5, #005b8c);
+  color: white;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 80px auto 20px;
+  max-width: 800px;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+  width: 95%;
+}
+
+/* Kartenansicht */
+#card-view {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Mehr Abstand zwischen Karten */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Future Event Karten */
 .event-card {
   background-color: #e2e6ea;
   color: #333;
   padding: 20px;
+  margin-bottom: 50px;
   border-radius: 12px;
-  margin-bottom: 10px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: static;
 }
 
-    /* Style für zukünftige Events */
-#future-events {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-  /* Style für Name des Creators */
-.event-card .event-creator {
-  font-weight: bold;
-  font-size: medium;
-}
-
- /* Style für die Zeitangabe des Events */
-.event-card .event-time {
-  font-size: 12px;
-  color: #666;
-}
-
-.last-updated {
+/* Toggle Button */
+#toggle-view {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
-  text-align: center;
-  font-size: medium;
-  padding-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
 }
 
-.copyright {
-font-size: xx-small;
-text-align: right;
-padding-right: 20px;
-padding-bottom: 10px;
+#toggle-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#toggle-view:focus,
+#toggle-view:active {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* Kalenderansicht */
+#calendar-view {
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  margin: 140px auto 20px;
+  max-width: 95%;
+  height: calc(80vh - 200px); /* Begrenzte Höhe */
+  overflow: hidden;
+}
+
+/* Footer */
+footer {
+  font-size: 0.8rem;
+  background-color: #007bb5;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
