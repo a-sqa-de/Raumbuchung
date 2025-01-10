@@ -11,13 +11,13 @@ Eine kleine Webandwendung zum Buchen von Konferenzräumen
 
 ## Fixed:
 GUI
-- Kehrt man von der Kalenderansicht auf die Kartenansicht zurück, verändert sich die Ansicht der "Future-Event" Karten
+- Kehrt man von der Kalenderansicht auf die Kartenansicht zurück, verändert sich die Ansicht der "Future-Event" Karten,
 Der Abstand zur "Current-EVent" Karte wird größer
 
 ## Bekannte Fehler:
 GUI
-- Die Button "Raum buchen" und Terminansicht" sind noch keine richtigen Button
-AKtuell muss man noch auf den Link klicken
+- Die Button "Raum buchen" und Terminansicht" sind noch keine richtigen Button.
+ktuell muss man noch auf den Link klicken
 
 - Lokalisierung vom Framework "FullCalender" funktioniert nicht
 "today" heißt nicht "heute"
