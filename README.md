@@ -1,7 +1,7 @@
 # Raumbuchung
 Eine kleine Webandwendung zum Buchen von Konferenzräumen
 
-## Features:
+## Features
 - GUI für schnellen Überblick über Buchungen
 - JSON als Ausgangslage für Meetingübersicht lesbar
 - Sortierung der Events nach chronologischer Reihenfolge (Starttermin)
@@ -9,12 +9,12 @@ Eine kleine Webandwendung zum Buchen von Konferenzräumen
 - Lokal ausführbar - dank HTML!
 - Countdown bis zum nächsten Meeting in Kartenansicht
 
-## Fixed:
+## Fixed
 GUI
 - Kehrt man von der Kalenderansicht auf die Kartenansicht zurück, verändert sich die Ansicht der "Future-Event" Karten.
 Der Abstand zur "Current-Event" Karte wird größer
 
-## Bekannte Fehler:
+## Bekannte Fehler
 GUI
 - Die Button "Raum buchen" und Terminansicht" sind noch keine richtigen Button.
 Aktuell muss man noch auf den Link klicken
