@@ -31,8 +31,30 @@ function getDayDisplay(dateStr) {
   }
 }
 
+// Funktion: Countdown-Update
+function updateCountdown(nextEventStartTime) {
+  const now = new Date();
+  const nextEventTime = new Date(nextEventStartTime);
+  const currentTimeContainer = document.querySelector("#current-time");
+
+  if (!currentTimeContainer) return;
+
+  // Berechne verbleibende Zeit
+  const timeDifference = nextEventTime - now;
+
+  if (timeDifference > 0) {
+    const hours = String(Math.floor((timeDifference / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+    const minutes = String(Math.floor((timeDifference / (1000 * 60)) % 60)).padStart(2, "0");
+    const seconds = String(Math.floor((timeDifference / 1000) % 60)).padStart(2, "0");
+
+    currentTimeContainer.textContent = `Nächstes Meeting in: ${hours} Stunden & ${minutes} Minuten`;
+  } else {
+    currentTimeContainer.textContent = ""; // Countdown verstecken, wenn Zeit abgelaufen ist
+  }
+}
+
 // Funktion: Events aktualisieren
-async function updateEvents() {
+async function updateMeetings() {
   try {
     // JSON-Daten laden
     const response = await fetch("buchungen.json");
@@ -57,12 +79,12 @@ async function updateEvents() {
       .sort((a, b) => new Date(a.start.dateTime) - new Date(b.start.dateTime));
 
     // HTML-Container auswählen
-    const currentEventContainer = document.getElementById("current-event");
-    const futureEventsContainer = document.getElementById("future-events");
+    const currentEventContainer = document.getElementById("current-meeting");
+    const futureEventsContainer = document.getElementById("future-meetings");
 
     // 3. Aktuelles Event anzeigen
     if (currentEvent) {
-      currentEventContainer.querySelector("#current-creator").textContent = `Titel: ${currentEvent.subject}`;
+      currentEventContainer.querySelector("#current-title").textContent = `Aktuell: ${currentEvent.subject}`;
       currentEventContainer.querySelector(
         "#current-organizer"
       ).textContent = `Organisator: ${currentEvent.organizer.name}`;
@@ -71,9 +93,24 @@ async function updateEvents() {
       ).textContent = `Zeit: ${formatTime(currentEvent.start.dateTime)} - ${formatTime(currentEvent.end.dateTime)}`;
       currentEventContainer.classList.remove("hidden");
     } else {
-      currentEventContainer.querySelector("#current-creator").textContent = "Derzeit kein Event vorhanden";
+      currentEventContainer.querySelector("#current-title").textContent = "Aktuell kein Meeting";
       currentEventContainer.querySelector("#current-time").textContent = "";
       currentEventContainer.classList.remove("hidden");
+
+      // Countdown für das nächste Event anzeigen, falls vorhanden
+      if (futureEvents.length > 0) {
+        const nextEvent = futureEvents[0];
+        const nextEventStartTime = nextEvent.start.dateTime;
+
+        updateCountdown(nextEventStartTime);
+        setInterval(() => updateCountdown(nextEventStartTime), 1000); // Jede Sekunde aktualisieren
+      }
+    }
+
+    if (futureEvents.length === 0) {
+      futureEventsContainer.style.display = "none";
+    } else {
+      futureEventsContainer.style.display = "block";
     }
 
     // 4. Zukünftige Events anzeigen (maximal 4)
@@ -85,9 +122,9 @@ async function updateEvents() {
       // Karte gestalten (zentriert, kleiner werdend)
       card.classList.add("event-card");
       const cardWidth = 100 - index * 10; // Dynamische Breite
-      card.style.width = `${cardWidth - 40}%`;
-      card.style.height = `${cardWidth + 10}%`;
-      card.style.margin = "0 auto";
+      card.style.width = `${cardWidth - 30}%`;
+      card.style.height = `${cardWidth + 5}%`;
+      card.style.margin = "10px auto";
 
       // Tagesanzeige
       const dayDisplay = getDayDisplay(event.start.dateTime);
@@ -107,56 +144,21 @@ async function updateEvents() {
   }
 }
 
-// Funktion: Letzte Aktualisierung anzeigen
-function updateLastUpdated() {
+// Funktion: Uhrzeit anzeigen ODER AUCH Kontrollinstanz, ob die Seite ordentlich lädt (lastUpdated)
+function clock() {
   const now = new Date();
-  const lastUpdatedContainer = document.getElementById("last-updated");
+  const ClockContainer = document.getElementById("clock");
 
-  if (lastUpdatedContainer) {
-    lastUpdatedContainer.textContent = `Letzte Aktualisierung: ${now.toLocaleTimeString([], {
+  if (ClockContainer) {
+    ClockContainer.textContent = `Uhrzeit: ${now.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
     })}`;
-  } else {
-    console.error("Container für 'last-updated' nicht gefunden!");
-  }
-}
-
-// Funktion: Letzte Aktualisierung anzeigen
-function updateLastUpdated() {
-  const now = new Date();
-  const lastUpdatedContainer = document.getElementById("last-updated");
-
-  if (lastUpdatedContainer) {
-    lastUpdatedContainer.textContent = `Letzte Aktualisierung: ${now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })}`;
-  } else {
-    console.error("Container für 'last-updated' nicht gefunden!");
-  }
-}
-
-// Funktion: Letzte Aktualisierung anzeigen
-function updateLastUpdated() {
-  const now = new Date();
-  const lastUpdatedContainer = document.getElementById("last-updated");
-
-  if (lastUpdatedContainer) {
-    lastUpdatedContainer.textContent = `Letzte Aktualisierung: ${now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })}`;
-  } else {
-    console.error("Container für 'last-updated' nicht gefunden!");
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Elemente auswählen
   const toggleViewButton = document.getElementById("toggle-view");
   const cardView = document.getElementById("card-view");
   const calendarView = document.getElementById("calendar-view");
@@ -165,44 +167,53 @@ document.addEventListener("DOMContentLoaded", () => {
   let isCalendarView = false;
   let calendar;
 
-  // Umschaltlogik für Ansichten
+  // Funktion zur Initialisierung der Ansichten
+  function initializeLayout() {
+    cardView.style.display = "block";
+    calendarView.style.display = "none";
+  }
+
+  // Funktion zur Korrektur von Layout-Problemen
+  function resetLayout() {
+    cardView.style.display = "block"; // Sicherstellen, dass Kartenansicht sichtbar bleibt
+    cardView.style.height = "auto";
+    cardView.offsetHeight; // Reflow erzwingen
+  }
+
   toggleViewButton.addEventListener("click", () => {
     isCalendarView = !isCalendarView;
 
     if (isCalendarView) {
-      // Kalenderansicht aktivieren
-      cardView.style.display = "none";
-      calendarView.style.display = "block";
-      toggleViewButton.textContent = "Wechsle zur Kartenansicht";
-      
-      // Kalender initialisieren, wenn noch nicht geschehen
+      cardView.style.display = "none"; // Verstecke die Kartenansicht
+      calendarView.style.display = "block"; // Zeige die Kalenderansicht
+      toggleViewButton.textContent = "Zur Kartenansicht wechseln";
+
       if (!calendar) {
         calendar = new FullCalendar.Calendar(calendarEl, {
           contentHeight: "auto",
           initialView: "dayGridWeek",
-          locale: "de", //<--- Lokalisierung, klappt nur irgendwie nicht...
+          locale: "de",
+          firstDay: 1,
           headerToolbar: {
-            left: "", //eigentlich steht hier "prev,next today", doppelt aber, wenn "right:" deaktiviert ist. Daher leer!
+            left: "",
             center: "title",
-            // Anzeige für "right:" fehlerhaft wenn man zwischen day,week,month Ansichten wechselt - daher auskommentiert
-            /*right: "dayGridMonth,timeGridWeek,timeGridDay",*/ 
           },
-          events: [], // Events später hinzufügen
+          events: [],
         });
       }
-      
-      
+
       calendar.render();
     } else {
-      // Kartenansicht aktivieren
-      calendarView.style.display = "none";
-      cardView.style.display = "block";
-      toggleViewButton.textContent = "Wechsle zur Kalenderansicht";
+      calendarView.style.display = "none"; // Verstecke die Kalenderansicht
+      cardView.style.display = "block"; // Zeige die Kartenansicht
+      toggleViewButton.textContent = "Zur Kalenderansicht wechseln";
+
+      // Korrigiere Layout nach dem Wechsel
+      resetLayout();
     }
   });
 
-  // Funktion zum Laden und Anzeigen der Events
-  async function loadAndDisplayEvents() {
+  async function loadAndDisplayMeetings() {
     try {
       const response = await fetch("buchungen.json");
       if (!response.ok) {
@@ -212,38 +223,33 @@ document.addEventListener("DOMContentLoaded", () => {
       const graphData = await response.json();
       const bookings = graphData.value;
 
-      // Events für den Kalender formatieren
-      const calendarEvents = bookings.map(booking => ({
+      const calendarEvents = bookings.map((booking) => ({
         title: booking.subject,
         start: booking.start.dateTime,
-        end: booking.end.dateTime
+        end: booking.end.dateTime,
       }));
 
-      // Wenn der Kalender initialisiert ist, Events hinzufügen
       if (calendar) {
         calendar.removeAllEvents();
         calendar.addEventSource(calendarEvents);
       }
 
-      // Kartenansicht aktualisieren
-      updateEvents(bookings);
+      updateMeetings(bookings);
     } catch (error) {
       console.error("Fehler beim Verarbeiten der Daten:", error);
     }
   }
 
-  // Initialer Aufruf der Funktionen
-  loadAndDisplayEvents();
+  // Initialisiere das Layout beim Laden der Seite
+  initializeLayout();
 
-  // Periodische Aktualisierung
-  setInterval(loadAndDisplayEvents, 1000);
+  //Lädt alle Meetings und aktualisiert diese jede Sekunde
+  loadAndDisplayMeetings();
+  setInterval(loadAndDisplayMeetings, 1000);
 });
 
+updateMeetings();
+clock();
 
-// Initialer Aufruf der Funktionen
-updateEvents();
-updateLastUpdated();
-
-// Periodische Aktualisierung
-setInterval(updateEvents, 15000);
-setInterval(updateLastUpdated, 15000);
+setInterval(updateMeetings, 1000);
+setInterval(clock, 1000);

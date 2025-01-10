@@ -110,7 +110,7 @@ header button:hover {
 }
 
 /* Current Event */
-#current-event {
+#current-meeting {
   background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
   text-align: center;
@@ -133,7 +133,7 @@ header button:hover {
   max-width: 800px;
 }
 
-/* Future Event Karten */
+/* zukünftige Event Karten */
 .event-card {
   background-color: #e2e6ea;
   color: #333;

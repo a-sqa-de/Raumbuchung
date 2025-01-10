@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminübersicht</title>
     <link rel="stylesheet" href="styles.css">
-    
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/de.global.min.js"></script>
 </head>
+
 <body>
     <header>
-      <div id="buchung" class="buchen">
-        <button><a href="buchung.html" >Raum buchen</a></button>
-      </div>
+      <button>
+        <a href="buchung.html">Raum buchen</a>
+      </button>
+      <div id="clock" class="clock"></div>
+      <img id="logo" class="logo" width="150" height="61" src="./pictures/asqa.png"/>
     </header>
 
-    <button id="toggle-view" class="fancy-button">Wechsle zur Kalenderansicht</button>
-
     <div id="card-view" class="view active">
-      <div id="current-event" class="hidden">
-      <h2 id="current-creator"></h2>
+      <div id="current-meeting" class="hidden">
+      <h2 id="current-title"></h2>
       <p id="current-organizer"></p>
       <p id="current-time"></p>
       <p id="current-location"></p>
       </div>
-      <div id="future-events"></div>
+      <div id="future-meetings"></div>
     </div>
     
-      <div id="calendar-view" class="view hidden">
-        <div id="calendar"></div>
-        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
-      </div>
+    <button id="toggle-view" class="fancy-button">Zur Kalenderansicht wechseln</button>
+
+    <div id="calendar-view" class="view hidden"> 
+      <div id="calendar"></div>
+    </div>
     
       <footer>
-        <div id="last-updated" class="last-updated">Letzte Aktualisierung: --:--:--</div>
-        <div id="copyright" class="copyright">&copy; ASQA GmbH</div>
+        <div id="copyright" class="copyright">&copy; ASQA Software Quality Assurance GmbH</div>
       </footer>
 
       <script src="index.js"></script>

@@ -131,6 +131,7 @@ function createForm() {
     durationSelect.name = "dauer";
     durationSelect.required = true;
   
+    //Werte für das DropDown Menü zur Auswahl von Dauer
     const durations = [
       { value: "0", text: "0 Minuten" },
       { value: "15", text: "15 Minuten" },
@@ -146,6 +147,10 @@ function createForm() {
       { value: "300", text: "5 Stunden" },
       { value: "330", text: "5 1/2 Stunden" },
       { value: "360", text: "6 Stunden" },
+      { value: "330", text: "6 1/2 Stunden" },
+      { value: "360", text: "7 Stunden" },
+      { value: "330", text: "7 1/2 Stunden" },
+      { value: "360", text: "8 Stunden" },
     ];
   
     durations.forEach((duration) => {
@@ -164,14 +169,14 @@ function createForm() {
   
     const endTimeLabel = document.createElement("label");
     endTimeLabel.htmlFor = "endzeit";
-    endTimeLabel.textContent = "Das geht dann bis";
+    endTimeLabel.textContent = "Endzeit";
     endTimeDiv.appendChild(endTimeLabel);
   
     const endTimeInput = document.createElement("input");
     endTimeInput.type = "text";
     endTimeInput.id = "endzeit";
     endTimeInput.name = "endzeit";
-    endTimeInput.placeholder = currentRoundedTime;
+    endTimeInput.placeholder = currentRoundedTime; //Anzeige für autom. berechneten "Endpunkt" 
     endTimeInput.readOnly = true;
   
     endTimeDiv.appendChild(endTimeInput);
