@@ -6,12 +6,6 @@ function createForm() {
     const formContainer = document.createElement("div");
     formContainer.className = "form-container";
   
-    // Hinweistext
-    const hintText = document.createElement("p");
-    hintText.className = "hint-text";
-    hintText.textContent = "Das Formular ist noch ohne Nutzen!";
-    formContainer.appendChild(hintText);
-  
     // Formular erstellen
     const form = document.createElement("form");
     form.className = "booking-form";
@@ -20,9 +14,9 @@ function createForm() {
   
     // Felder für das Formular
     const fields = [
-      { label: "Organisator/-in", id: "creator", name: "creator", type: "text", placeholder: "Dein Name", required: true },
       { label: "Titel", id: "titel", name: "titel", type: "text", placeholder: "Wie heißt dein Event?", required: true },
-      { label: "Inhalt (optional)", id: "inhalt", name: "inhalt", type: "text", placeholder: "Worum geht es?", required: false },
+      { label: "Organisator*in", id: "creator", name: "creator", type: "text", placeholder: "Dein Name", required: true },
+      { label: "Teilnehmer*innen (Optional)", id: "subscriber", name: "subscriber", type: "text", placeholder: "Wer ist alles dabei?", required: false },
     ];
   
     fields.forEach((field) => {
@@ -45,7 +39,6 @@ function createForm() {
       form.appendChild(fieldContainer);
     });
   
-    // Datum-Feld
     const dateDiv = document.createElement("div");
     dateDiv.className = "field-container";
   
@@ -54,8 +47,9 @@ function createForm() {
     dateLabel.textContent = "Datum";
     dateDiv.appendChild(dateLabel);
   
+    //Framework "Flatpickr" für DropDown von Datumsangabe
     const dateInput = document.createElement("input");
-    dateInput.type = "text"; // Flatpickr benötigt type="text"
+    dateInput.type = "text"; // Flatpickr benötigt type="text". Ist so vorgegeben
     dateInput.id = "datum";
     dateInput.name = "datum";
     dateInput.required = true;
@@ -136,6 +130,7 @@ function createForm() {
       { value: "0", text: "0 Minuten" },
       { value: "15", text: "15 Minuten" },
       { value: "30", text: "30 Minuten" },
+      { value: "45", text: "45 Minuten" },
       { value: "60", text: "1 Stunde" },
       { value: "90", text: "1 1/2 Stunden" },
       { value: "120", text: "2 Stunden" },
@@ -169,7 +164,7 @@ function createForm() {
   
     const endTimeLabel = document.createElement("label");
     endTimeLabel.htmlFor = "endzeit";
-    endTimeLabel.textContent = "Endzeit";
+    endTimeLabel.textContent = "Endzeit (wird autom. berechnet)";
     endTimeDiv.appendChild(endTimeLabel);
   
     const endTimeInput = document.createElement("input");
@@ -202,7 +197,7 @@ function createForm() {
       }
     }
   
-    // Submit-Button
+    // Submit-Button "Termin Eintragen"
     const submitButton = document.createElement("button");
     submitButton.className = "submit-button";
     submitButton.type = "submit";
@@ -214,12 +209,28 @@ function createForm() {
   
     // Flatpickr aktivieren
     flatpickr("#datum", {
-      dateFormat: "d-m-20y",
+      dateFormat: "d.m.20y",
       defaultDate: "today",
       minDate: "today",
       locale: "de",
     });
   }
+
+  // Funktion: Uhrzeit anzeigen ODER AUCH Kontrollinstanz, ob die Seite ordentlich lädt (lastUpdated)
+function clock() {
+  const now = new Date();
+  const ClockContainer = document.getElementById("clock");
+
+  if (ClockContainer) {
+    ClockContainer.textContent = `Uhrzeit: ${now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    })}`;
+  }
+}
   
   createForm();
+  clock()
+  setInterval(clock, 1000);
   

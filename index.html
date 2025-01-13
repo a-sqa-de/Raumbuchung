@@ -9,15 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/de.global.min.js"></script>
+    <script>src="clock.js"</script>
 </head>
 
 <body>
     <header>
-      <button>
-        <a href="buchung.html">Raum buchen</a>
-      </button>
+      <img id="logo" class="logo" width="150" height="63" src="./pictures/asqa.png" alt="asqa-logo"/>
       <div id="clock" class="clock"></div>
-      <img id="logo" class="logo" width="150" height="61" src="./pictures/asqa.png"/>
+      <a href="buchung.html" class="header-button">Raum buchen</a>
     </header>
 
     <div id="card-view" class="view active">
@@ -30,7 +29,7 @@
       <div id="future-meetings"></div>
     </div>
     
-    <button id="toggle-view" class="fancy-button">Zur Kalenderansicht wechseln</button>
+    <button id="toggle-view">Kalenderansicht</button>
 
     <div id="calendar-view" class="view hidden"> 
       <div id="calendar"></div>

@@ -26,9 +26,7 @@ function getDayDisplay(dateStr) {
     return "(morgen)";
   } else if (dayDifference > 1) {
     return `(in ${dayDifference} Tagen)`;
-  } else {
-    return "(vergangenes Event)"; // Optional für vergangene Events
-  }
+  } 
 }
 
 // Funktion: Countdown-Update
@@ -49,7 +47,7 @@ function updateCountdown(nextEventStartTime) {
 
     currentTimeContainer.textContent = `Nächstes Meeting in: ${hours} Stunden & ${minutes} Minuten`;
   } else {
-    currentTimeContainer.textContent = ""; // Countdown verstecken, wenn Zeit abgelaufen ist
+    currentTimeContainer.textContent = ""; // Countdown wird versteckt, wenn Zeit abgelaufen ist
   }
 }
 
@@ -84,13 +82,10 @@ async function updateMeetings() {
 
     // 3. Aktuelles Event anzeigen
     if (currentEvent) {
-      currentEventContainer.querySelector("#current-title").textContent = `Aktuell: ${currentEvent.subject}`;
-      currentEventContainer.querySelector(
-        "#current-organizer"
-      ).textContent = `Organisator: ${currentEvent.organizer.name}`;
-      currentEventContainer.querySelector(
-        "#current-time"
-      ).textContent = `Zeit: ${formatTime(currentEvent.start.dateTime)} - ${formatTime(currentEvent.end.dateTime)}`;
+      currentEventContainer.querySelector("#current-title").textContent = `${currentEvent.subject}`;
+      currentEventContainer.querySelector("#current-organizer").textContent = `${currentEvent.organizer.name}`;
+      currentEventContainer.querySelector("#current-time").textContent = `${formatTime(currentEvent.start.dateTime)} 
+        - ${formatTime(currentEvent.end.dateTime)}`;
       currentEventContainer.classList.remove("hidden");
     } else {
       currentEventContainer.querySelector("#current-title").textContent = "Aktuell kein Meeting";
@@ -116,7 +111,7 @@ async function updateMeetings() {
     // 4. Zukünftige Events anzeigen (maximal 4)
     futureEventsContainer.innerHTML = "";
 
-    futureEvents.slice(0, 4).forEach((event, index) => {
+    futureEvents.slice(0, 3).forEach((event, index) => {
       const card = document.createElement("div");
 
       // Karte gestalten (zentriert, kleiner werdend)
@@ -131,9 +126,10 @@ async function updateMeetings() {
 
       // Karteninhalt
       card.innerHTML = `
-        <div><strong>Titel:</strong> ${event.subject || "Kein Titel"}</div>
-        <div><strong>Organisator:</strong> ${event.organizer.name}</div>
-        <div><strong>Zeit:</strong> ${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)} ${dayDisplay}</div>
+        <div><strong>${event.subject || "Kein Titel"}</strong> </div>
+        <div>${event.organizer.name}</div>
+        <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
+        <div>${dayDisplay}</div>
       `;
 
       // Karte in den Container einfügen
@@ -184,9 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
     isCalendarView = !isCalendarView;
 
     if (isCalendarView) {
-      cardView.style.display = "none"; // Verstecke die Kartenansicht
-      calendarView.style.display = "block"; // Zeige die Kalenderansicht
-      toggleViewButton.textContent = "Zur Kartenansicht wechseln";
+      cardView.style.display = "none"; // Versteckt die Kartenansicht
+      calendarView.style.display = "block"; // Zeigt die Kalenderansicht
+      toggleViewButton.textContent = "Dashboard";
 
       if (!calendar) {
         calendar = new FullCalendar.Calendar(calendarEl, {
@@ -194,9 +190,18 @@ document.addEventListener("DOMContentLoaded", () => {
           initialView: "dayGridWeek",
           locale: "de",
           firstDay: 1,
+          hiddenDays: [0, 6], // Sonntag (0) und Samstag (6) werden ausgeblendet
           headerToolbar: {
             left: "",
             center: "title",
+          },
+          eventTimeFormat: { // Zeitformat anpassen
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false // 24-Stunden-Format
+          },
+          buttonText: { // Anpassung der Button-Texte
+            today: "Heute"
           },
           events: [],
         });
@@ -204,9 +209,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       calendar.render();
     } else {
-      calendarView.style.display = "none"; // Verstecke die Kalenderansicht
-      cardView.style.display = "block"; // Zeige die Kartenansicht
-      toggleViewButton.textContent = "Zur Kalenderansicht wechseln";
+      calendarView.style.display = "none"; // Versteckt die Kalenderansicht
+      cardView.style.display = "block"; // Zeigt die Kartenansicht
+      toggleViewButton.textContent = "Wochenansicht";
 
       // Korrigiere Layout nach dem Wechsel
       resetLayout();

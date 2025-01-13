@@ -11,7 +11,7 @@ body {
 /* Header */
 header {
   font-size: 1rem;
-  background-color: #007bb5; /* Dominantes Blau */
+  background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
   padding: 10px 20px;
   display: flex;
@@ -26,8 +26,10 @@ header {
 }
 
 /* Raum buchen Button im Header */
-header button {
+.header-button {
   background-color: white;
+  text-align: center;
+  width: 120px;
   color: #007bb5;
   border: 2px solid #007bb5;
   border-radius: 8px;
@@ -35,30 +37,26 @@ header button {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
+  position: relative;
 }
 
-header button:hover {
-  background-color: #007bb5;
+.header-button:hover {
+  background-color: #0e4a66;
   color: white;
 }
 
-/* Formular */
 .form-container {
-  max-width: 33%; /* Breiter als vorher, aber nicht zu breit */
-  margin: 70px auto; /* Abstand vom Header */
-  padding: 12px;
+  max-width: 500px;
+  min-height: min-content;
+  width: 90%; /* Passt sich an den Bildschirm an */
+  padding: 10px; /* Mehr Polsterung */
+  margin: auto; /* Zentriere das Formular horizontal */
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 2px solid #007bb5;
-  overflow: hidden;
-}
-
-.hint-text {
-  text-align: center;
-  color: #d9534f;
-  font-size: 14px;
-  margin-bottom: 20px;
+  margin-top: 100px;
+  height: calc(80vh - 200px); /* 80% der View Hight - 200px */
 }
 
 /* Eingabefelder */
@@ -115,22 +113,46 @@ header button:hover {
   color: white;
   text-align: center;
   font-size: 1.4rem;
-  padding: 30px;
-  border-radius: 12px;
-  margin: 80px auto 20px;
-  max-width: 800px;
+  padding: 5px;
+  border-radius: 12px; 
+  border-style: solid;
+  border-color: #333;
+  margin: 90px auto 20px;
   box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
-  width: 95%;
 }
 
-/* Kartenansicht */
+/* Überschrift des Meetings */
+#current-meeting #current-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2px; /* Reduziere den Abstand nach unten */
+}
+
+/* Veranstalter */
+#current-meeting #current-organizer {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 20px; /* Reduziere den Abstand nach unten */
+  margin-top: 5px;
+}
+
+/* Zeitangaben */
+#current-meeting #current-time {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 5px; /* Reduziere den Abstand nach oben */
+  margin-bottom: 0; /* Entferne zusätzlichen Abstand nach unten */
+}
+
+/* Allgemeine Kartenansicht */
 #card-view {
   display: flex;
   flex-direction: column;
   gap: 30px; /* Mehr Abstand zwischen Karten */
-  padding: 20px;
+  padding: 10px;
   margin: 0 auto;
   max-width: 800px;
+  max-height: calc(80vh - 800px);
 }
 
 /* zukünftige Event Karten */
@@ -146,14 +168,10 @@ header button:hover {
   position: static;
 }
 
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 /* Toggle Button */
 #toggle-view {
   position: fixed;
+  width: 170px;
   bottom: 70px;
   right: 20px;
   background: linear-gradient(90deg, #007bb5, #005b8c);
@@ -169,10 +187,6 @@ header button:hover {
   z-index: 1000;
 }
 
-#toggle-view:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
 
 #toggle-view:focus,
 #toggle-view:active {
@@ -187,19 +201,22 @@ header button:hover {
   border-radius: 12px;
   margin: 140px auto 20px;
   max-width: 95%;
-  height: calc(80vh - 200px); /* Begrenzte Höhe */
+  height: calc(80vh - 200px); /* 80% der View Hight - 200px */
   overflow: hidden;
 }
 
-/* Footer */
 footer {
-  font-size: 0.8rem;
-  background-color: #007bb5;
+  font-size: 12px;
+  background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
-  padding: 10px 20px;
+  padding: 10px;
   text-align: center;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+#clock {
+  font-size: large;
 }
