@@ -11,12 +11,41 @@ function createForm() {
     form.className = "booking-form";
     form.action = "create_event.php";
     form.method = "POST";
+
+    form.addEventListener("submit", (event) => {
+      const selectedDuration = durationSelect.value;
+      if (selectedDuration === "0") {
+        event.preventDefault();
+        const errormessagedauer = document.createElement("div");
+        errormessagedauer.style.position = "fixed";
+        errormessagedauer.style.top = "50%";
+        errormessagedauer.style.left = "50%";
+        errormessagedauer.style.transform = "translate(-50%, -50%)";
+        errormessagedauer.style.padding = "20px";
+        errormessagedauer.style.backgroundColor = "white";
+        errormessagedauer.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+        errormessagedauer.style.zIndex = "1000";
+    
+        const message = document.createElement("p");
+        message.textContent = "Bitte wähle eine Dauer größer als 0 Minuten aus.";
+        errormessagedauer.appendChild(message);
+    
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "Schließen";
+        closeButton.addEventListener("click", () => {
+          errormessagedauer.remove();
+        });
+        errormessagedauer.appendChild(closeButton);
+    
+        document.body.appendChild(errormessagedauer);
+      }
+    });
   
-    // Felder für das Formular
+    // Felder und darin liegende Texte (Placeholder)
     const fields = [
       { label: "Titel", id: "titel", name: "titel", type: "text", placeholder: "Wie heißt dein Event?", required: true },
       { label: "Organisator*in", id: "creator", name: "creator", type: "text", placeholder: "Dein Name", required: true },
-      { label: "Teilnehmer*innen (Optional)", id: "subscriber", name: "subscriber", type: "text", placeholder: "Wer ist alles dabei?", required: false },
+      { label: "Teilnehmer*innen", id: "subscriber", name: "subscriber", type: "text", placeholder: "Wer ist alles dabei?", required: false },
     ];
   
     fields.forEach((field) => {
@@ -74,7 +103,7 @@ function createForm() {
     function getCurrentRoundedTime() {
       const now = new Date();
       const minutes = now.getMinutes();
-      const roundedMinutes = Math.ceil(minutes / 15) * 15; // Runden auf den nächsten 15-Minuten-Schritt
+      const roundedMinutes = Math.ceil(minutes / 15) * 15; // Hier wird auf den nächsten 15-Minuten-Schritt gerundet
       if (roundedMinutes === 60) {
         now.setHours(now.getHours() + 1);
         now.setMinutes(0);
@@ -90,12 +119,15 @@ function createForm() {
     const currentRoundedTime = getCurrentRoundedTime();
     
     // Zeiten im 15-Minuten-Takt hinzufügen
-    for (let hour = 0; hour < 24; hour++) {
+    for (let hour = 8; hour < 19; hour++) {
       for (let minute = 0; minute < 60; minute += 15) {
+        // Stop die Schleife, wenn Stunde 18 und Minute > 45
+        if (hour === 18 && minute > 0) break;
+    
         const formattedHour = String(hour).padStart(2, "0");
         const formattedMinute = String(minute).padStart(2, "0");
         const timeValue = `${formattedHour}:${formattedMinute}`;
-        
+    
         const option = document.createElement("option");
         option.value = timeValue;
         option.textContent = timeValue;
@@ -111,7 +143,7 @@ function createForm() {
     timeDiv.appendChild(timeSelect);
     form.appendChild(timeDiv);
   
-    // Dropdown für Dauer
+    // Container für Dropdown für Dauer
     const durationDiv = document.createElement("div");
     durationDiv.className = "field-container";
   
@@ -125,7 +157,7 @@ function createForm() {
     durationSelect.name = "dauer";
     durationSelect.required = true;
   
-    //Werte für das DropDown Menü zur Auswahl von Dauer
+    //Werte zum Auswählen von Dauer
     const durations = [
       { value: "0", text: "0 Minuten" },
       { value: "15", text: "15 Minuten" },
@@ -164,7 +196,7 @@ function createForm() {
   
     const endTimeLabel = document.createElement("label");
     endTimeLabel.htmlFor = "endzeit";
-    endTimeLabel.textContent = "Endzeit (wird autom. berechnet)";
+    endTimeLabel.innerHTML = 'Endzeit <span style="font-weight:normal">(wird autom. berechnet)</span>';
     endTimeDiv.appendChild(endTimeLabel);
   
     const endTimeInput = document.createElement("input");
@@ -181,6 +213,7 @@ function createForm() {
     timeSelect.addEventListener("change", calculateEndTime);
     durationSelect.addEventListener("change", calculateEndTime);
   
+    //Berechnet die Endzeit
     function calculateEndTime() {
       const startTime = timeSelect.value;
       const duration = parseInt(durationSelect.value, 10);
@@ -191,9 +224,9 @@ function createForm() {
         startDate.setHours(hours, minutes, 0, 0);
   
         const endDate = new Date(startDate.getTime() + duration * 60000);
-        const formattedEndTime = `${String(endDate.getHours()).padStart(2, "0")}:${String(endDate.getMinutes()).padStart(2, "0")}`;
+        const formatEndTime = `${String(endDate.getHours()).padStart(2, "0")}:${String(endDate.getMinutes()).padStart(2, "0")}`;
   
-        endTimeInput.value = formattedEndTime;
+        endTimeInput.value = formatEndTime;
       }
     }
   
@@ -209,7 +242,7 @@ function createForm() {
   
     // Flatpickr aktivieren
     flatpickr("#datum", {
-      dateFormat: "d.m.20y",
+      dateFormat: "d.m.y",
       defaultDate: "today",
       minDate: "today",
       locale: "de",

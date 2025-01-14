@@ -187,7 +187,6 @@ header {
   z-index: 1000;
 }
 
-
 #toggle-view:focus,
 #toggle-view:active {
   outline: none;
