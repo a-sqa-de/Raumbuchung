@@ -74,7 +74,7 @@ const fetchCalendarEvents = async () => {
     // Token abrufen
     const token = await getAccessToken();
 
-    // Debugging: Zeige die Anfrage-Details
+    // Fürs Debugging: Zeigt die Anfrage-Details
     console.log('Access Token:', token);
     console.log('Request URL:', 'https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events');
     console.log('Request Headers:', {
@@ -102,8 +102,25 @@ const fetchCalendarEvents = async () => {
     }
     throw error;
   }
+}
+
+/**
+ * Erstellt Kalenderereignisse in Microsoft Graph
+ */
+const createCalendarEvent = async (eventData) => {
+  const token = await getAccessToken();
+  const response = await axios.post(
+    'https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events',
+    eventData,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+  return response.data;
 };
 
-
 // Exportiere die Funktion für den Abruf von Kalenderdaten
-module.exports = { getAccessToken, fetchCalendarEvents };
+module.exports = { getAccessToken, fetchCalendarEvents, createCalendarEvent };
