@@ -248,22 +248,6 @@ function createForm() {
       locale: "de",
     });
   }
-
-  // Funktion: Uhrzeit anzeigen ODER AUCH Kontrollinstanz, ob die Seite ordentlich lädt (lastUpdated)
-function clock() {
-  const now = new Date();
-  const ClockContainer = document.getElementById("clock");
-
-  if (ClockContainer) {
-    ClockContainer.textContent = `Uhrzeit: ${now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    })}`;
-  }
-}
   
   createForm();
-  clock()
-  setInterval(clock, 1000);
   

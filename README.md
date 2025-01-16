@@ -3,11 +3,13 @@ Eine kleine Webandwendung zum Buchen von Konferenzräumen
 
 ## Features
 - GUI für schnellen Überblick über Buchungen
+- API Anbindung zur Aktualisierung von JSON-Datei via WebSocket
 - JSON als Ausgangslage für Meetingübersicht lesbar
 - Sortierung der Events nach chronologischer Reihenfolge (Starttermin)
+- Countdown bis zum nächsten Meeting in Kartenansicht
 - Toogle Button für Wechsel auf Kalenderansicht und zurück
 - Lokal ausführbar - dank HTML!
-- Countdown bis zum nächsten Meeting in Kartenansicht
+
 
 ## Fixed
 GUI

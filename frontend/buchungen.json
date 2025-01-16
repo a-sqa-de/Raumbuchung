@@ -1,2404 +1,1388 @@
-{
-  "value": [
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-01T08:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-01T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Budgetbesprechung",
-          "start": {
-              "dateTime": "2025-01-01T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-01T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-01-01T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-01T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-01-01T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-01T17:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-01-01T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-01T10:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-01-02T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-02T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-01-03T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-03T17:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-03T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-03T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-01-03T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-03T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Quartalsplanung",
-          "start": {
-              "dateTime": "2025-01-06T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-06T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-01-06T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-06T10:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-06T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-06T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-01-07T08:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-07T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-01-07T12:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-07T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-08T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-08T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-09T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-09T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-01-09T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-09T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Strategieplanung",
-          "start": {
-              "dateTime": "2025-01-10T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-10T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-01-10T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-10T12:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-01-10T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-10T17:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-01-10T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-10T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-01-10T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-10T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-13T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-13T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-01-13T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-13T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-01-13T10:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-13T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-01-13T15:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-13T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-01-13T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-13T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-01-14T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-14T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-14T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-14T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-14T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-14T11:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Onboarding Session 22",
-          "start": {
-              "dateTime": "2025-01-15T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-15T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-01-15T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-15T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-01-16T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-16T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-01-16T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-16T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-16T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-16T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-16T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-16T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-01-17T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-17T11:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-01-17T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-17T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-01-20T08:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-20T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-01-20T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-20T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-01-21T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-21T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-01-21T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-21T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-01-21T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-21T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-21T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-21T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-22T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-22T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-01-23T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-23T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-01-23T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-23T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-01-23T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-23T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-01-24T14:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-24T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Jahresplanung",
-          "start": {
-              "dateTime": "2025-01-27T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-27T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-01-28T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-28T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-01-28T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-28T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-01-28T10:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-28T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-01-28T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-28T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-01-29T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-29T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-01-30T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-30T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Budgetbesprechung",
-          "start": {
-              "dateTime": "2025-01-31T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-31T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-01-31T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-31T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-01-31T08:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-01-31T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-02-03T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-03T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Team Meeting",
-          "start": {
-              "dateTime": "2025-02-03T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-03T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-02-03T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-03T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-02-03T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-03T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-02-04T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-04T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-02-04T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-04T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-02-04T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-04T14:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-02-04T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-04T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-02-05T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-05T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Onboarding Session",
-          "start": {
-              "dateTime": "2025-02-06T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-06T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Budgetbesprechung",
-          "start": {
-              "dateTime": "2025-02-06T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-06T13:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-02-06T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-06T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-02-06T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-06T17:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-02-06T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-06T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-02-07T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-07T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-02-10T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-10T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-02-10T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-10T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-02-11T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-11T12:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-02-11T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-11T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-02-11T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-11T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Quartalsplanung",
-          "start": {
-              "dateTime": "2025-02-11T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-11T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-02-12T08:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-12T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-02-12T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-12T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-02-12T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-12T17:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Sprint Planning",
-          "start": {
-              "dateTime": "2025-02-12T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-12T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-02-12T14:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-12T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Jahresplanung",
-          "start": {
-              "dateTime": "2025-02-13T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-13T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Abteilungsmeeting",
-          "start": {
-              "dateTime": "2025-02-13T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-13T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Budgetbesprechung",
-          "start": {
-              "dateTime": "2025-02-14T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-14T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-02-17T14:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-17T14:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-02-18T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-18T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Abteilungsmeeting",
-          "start": {
-              "dateTime": "2025-02-18T14:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-18T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-02-18T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-18T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Abteilungsmeeting",
-          "start": {
-              "dateTime": "2025-02-18T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-18T17:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-02-18T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-18T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Sprint Planning",
-          "start": {
-              "dateTime": "2025-02-19T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-19T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Jahresplanung",
-          "start": {
-              "dateTime": "2025-02-19T14:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-19T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-02-19T13:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-19T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-02-19T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-19T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-02-19T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-19T17:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-02-20T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-20T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-02-20T15:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-20T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-02-20T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-20T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-02-20T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-20T17:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-02-21T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-21T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-02-21T08:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-21T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-02-24T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-24T12:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Quartalsplanung",
-          "start": {
-              "dateTime": "2025-02-25T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-25T11:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Sprint Planning",
-          "start": {
-              "dateTime": "2025-02-25T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-25T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-02-25T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-25T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-02-25T14:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-25T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Planung Meilenstein",
-          "start": {
-              "dateTime": "2025-02-25T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-25T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-02-26T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-26T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Code Review",
-          "start": {
-              "dateTime": "2025-02-26T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-26T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-02-26T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-26T11:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-02-26T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-26T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-02-26T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-26T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Jahresplanung",
-          "start": {
-              "dateTime": "2025-02-27T08:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-27T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-02-28T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-28T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-02-28T15:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-28T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Planung Meilenstein",
-          "start": {
-              "dateTime": "2025-02-28T09:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-28T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Abteilungsmeeting",
-          "start": {
-              "dateTime": "2025-02-28T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-28T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-02-28T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-02-28T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-03-03T14:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-03T14:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-03-03T13:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-03T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Onboarding Session",
-          "start": {
-              "dateTime": "2025-03-03T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-03T11:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Abteilungsmeeting",
-          "start": {
-              "dateTime": "2025-03-03T15:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-03T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Projektbesprechung",
-          "start": {
-              "dateTime": "2025-03-03T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-03T13:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Team Meeting",
-          "start": {
-              "dateTime": "2025-03-04T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-04T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-03-04T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-04T17:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-03-04T11:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-04T12:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "HR Workshop",
-          "start": {
-              "dateTime": "2025-03-05T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-05T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Strategieplanung",
-          "start": {
-              "dateTime": "2025-03-05T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-05T17:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-03-05T13:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-05T14:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-03-05T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-05T18:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-03-06T15:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-06T16:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-03-07T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-07T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Jahresplanung",
-          "start": {
-              "dateTime": "2025-03-07T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-07T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Budgetbesprechung",
-          "start": {
-              "dateTime": "2025-03-07T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-07T09:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-03-07T13:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-07T14:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-03-07T08:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-07T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-03-10T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-10T14:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Marketing Update",
-          "start": {
-              "dateTime": "2025-03-10T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-10T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-03-10T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-10T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-03-10T10:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-10T11:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Sprint Planning",
-          "start": {
-              "dateTime": "2025-03-11T08:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-11T09:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Planung Meilenstein",
-          "start": {
-              "dateTime": "2025-03-11T14:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-11T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "IT-Sicherheitsprüfung",
-          "start": {
-              "dateTime": "2025-03-11T11:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-11T12:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-03-11T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-11T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Produktdemo",
-          "start": {
-              "dateTime": "2025-03-12T15:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-12T16:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Quartalsplanung",
-          "start": {
-              "dateTime": "2025-03-12T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-12T17:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "John Doe",
-              "address": "john.doe@example.com"
-          }
-      },
-      {
-          "subject": "Kundentermin",
-          "start": {
-              "dateTime": "2025-03-12T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-12T17:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Clara Schmidt",
-              "address": "clara.schmidt@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-03-13T09:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-13T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-03-13T10:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-13T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Kundenpräsentation",
-          "start": {
-              "dateTime": "2025-03-13T16:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-13T17:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Schulung",
-          "start": {
-              "dateTime": "2025-03-13T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-13T12:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
-      },
-      {
-          "subject": "Vertriebsgespräch",
-          "start": {
-              "dateTime": "2025-03-14T13:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-14T14:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Technischer Workshop",
-          "start": {
-              "dateTime": "2025-03-14T10:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-14T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Retrospektive",
-          "start": {
-              "dateTime": "2025-03-14T15:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-14T16:45:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Max Mustermann",
-              "address": "max.mustermann@example.com"
-          }
-      },
-      {
-          "subject": "Daily Standup",
-          "start": {
-              "dateTime": "2025-03-14T10:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-14T11:15:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Tom Huber",
-              "address": "tom.huber@example.com"
-          }
-      },
-      {
-          "subject": "Innovationsworkshop",
-          "start": {
-              "dateTime": "2025-03-14T12:00:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "end": {
-              "dateTime": "2025-03-14T13:30:00",
-              "timeZone": "Europe/Berlin"
-          },
-          "organizer": {
-              "name": "Anna Müller",
-              "address": "anna.mueller@example.com"
-          }
+[
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAASNzVQw==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AABI3Fs5AAA=",
+    "createdDateTime": "2025-01-13T14:57:39.0686929Z",
+    "lastModifiedDateTime": "2025-01-13T15:01:09.1097336Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAASNzVQw==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E0080000000009FB157ACB65DB01000000000000000010000000F9AACF0DF788C04EACC77A979F1CB2E2",
+    "uid": "040000008200E00074C5B7101A82E0080000000009FB157ACB65DB01000000000000000010000000F9AACF0DF788C04EACC77A979F1CB2E2",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "IHK Präsentation + Fachgespräch \"Jira Ticket Overview\" Peter Probe [Persönlich]",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAABI3Fs5AAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2025-01-13T14:57:42.1099649Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-01-23T09:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-01-23T10:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
       }
-  ]
-}
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Präsenzkalender",
+          "address": "urlaub@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Peter Kunze",
+          "address": "p.kunze@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Paul Wehle",
+          "address": "p.wehle@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Sebastian Scheffler",
+          "address": "s.scheffler@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Präsenzkalender",
+        "address": "urlaub@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_OTE4YzMwN2YtZDg0NS00Y2JlLTk0NjYtZjIyZWEzNTNjNjY1%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%2217127626-af7a-4bcd-8d59-6bdf1909a564%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAALwHC1g==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAvAnQHAAA=",
+    "createdDateTime": "2024-12-05T16:05:19.9430475Z",
+    "lastModifiedDateTime": "2024-12-05T16:06:27.6289292Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAALwHC1g==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E0080000000093D80E6C2F47DB010000000000000000100000002A47F2FB1BADFF4A989F0C342F3E44FF",
+    "uid": "040000008200E00074C5B7101A82E0080000000093D80E6C2F47DB010000000000000000100000002A47F2FB1BADFF4A989F0C342F3E44FF",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "Entwicklungsgespräch Basti<>Alex",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAvAnQHAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-12-05T16:05:22.6898042Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-03-06T10:30:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-03-06T11:15:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Sebastian Scheffler",
+          "address": "s.scheffler@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWRlNzQ3YjItYzQyNy00MDg3LThkNDUtZTRjZWZlMzcwMTNl%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAALwHYuw==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAvAnQGAAA=",
+    "createdDateTime": "2024-12-05T15:59:48.1379735Z",
+    "lastModifiedDateTime": "2024-12-06T09:07:58.0327014Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAALwHYuw==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E0080000000051F92A952C47DB01000000000000000010000000DE9108712907374AB6C3889AC76AE7DC",
+    "uid": "040000008200E00074C5B7101A82E0080000000051F92A952C47DB01000000000000000010000000DE9108712907374AB6C3889AC76AE7DC",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "Entwicklungsgespräch Anna<>Alex",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAvAnQGAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-12-05T15:59:50.1991229Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-03-06T09:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-03-06T09:45:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Anna Eichmann",
+          "address": "a.eichmann@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_YmJlYmQxM2UtNjJkNy00NzFjLWJhNmQtYzI3YzNhMTcxNjll%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAALwHemA==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAvAnQFAAA=",
+    "createdDateTime": "2024-12-05T15:59:42.9271408Z",
+    "lastModifiedDateTime": "2024-12-06T12:45:57.5253968Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAALwHemA==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E00800000000BB44F0D42D47DB01000000000000000010000000A6E62997ABC6FA44BFD889DC88CB5C56",
+    "uid": "040000008200E00074C5B7101A82E00800000000BB44F0D42D47DB01000000000000000010000000A6E62997ABC6FA44BFD889DC88CB5C56",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "Entwicklungsgespräch Kevin B.<>Alex [Persönlich]",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAvAnQFAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-12-05T15:59:45.1361188Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-03-06T09:45:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-03-06T10:30:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Kevin Bredow",
+          "address": "k.bredow@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTY5ZTk3ZWUtOWY4YS00NDVlLTliNzUtYzA2NDg1YTNmNTRj%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAALwHCdQ==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAvAnQEAAA=",
+    "createdDateTime": "2024-12-05T15:59:28.4903875Z",
+    "lastModifiedDateTime": "2024-12-05T16:00:27.4581258Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAALwHCdQ==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E00800000000B657B1A32E47DB01000000000000000010000000E0F937BC590F0342AFE044EBF7669C70",
+    "uid": "040000008200E00074C5B7101A82E00800000000B657B1A32E47DB01000000000000000010000000E0F937BC590F0342AFE044EBF7669C70",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "Entwicklungsgespräche Kasimir<>Alex [Persönlich]",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAvAnQEAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-12-05T15:59:30.9419219Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-03-06T12:30:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-03-06T13:15:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Kasimir Gritz",
+          "address": "k.gritz@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MmY2YmViODctMjZjMS00NDgyLWI4YzctODIxMWYwNmZiYjdm%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAALwHU1A==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAvAnQDAAA=",
+    "createdDateTime": "2024-12-05T15:44:15.7964968Z",
+    "lastModifiedDateTime": "2024-12-06T06:46:28.4466803Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAALwHU1A==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E00800000000F49E2A802C47DB0100000000000000001000000067E3A3E169F78F49BD6AA370E5086E4F",
+    "uid": "040000008200E00074C5B7101A82E00800000000F49E2A802C47DB0100000000000000001000000067E3A3E169F78F49BD6AA370E5086E4F",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "Entwicklungsgespräch Rick<>Alex [Persönlich]",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAvAnQDAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": false,
+    "onlineMeetingProvider": "unknown",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-12-05T15:44:18.0666296Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-03-06T08:15:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-03-06T09:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Rick Korau",
+          "address": "r.korau@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": null,
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAASNzNbw==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAtF6eVAAA=",
+    "createdDateTime": "2024-12-02T14:30:26.7416201Z",
+    "lastModifiedDateTime": "2025-01-13T08:58:40.0140176Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAASNzNbw==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E00807E9010D6FED4019A818DB0100000000000000001000000032845FC8DDF7084C9139809CC325BE39",
+    "uid": "040000008200E00074C5B7101A82E008000000006FED4019A818DB0100000000000000001000000032845FC8DDF7084C9139809CC325BE39",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "All-Lotto-Talk",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAtF6eVAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2025-01-13T08:55:42.7219043Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-01-20T09:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-01-20T10:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "notResponded",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Enrico Ausborn",
+          "address": "e.ausborn@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Jessica Balaban",
+          "address": "j.balaban@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Abide Dogan",
+          "address": "a.dogan@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Steve Plath",
+          "address": "s.plath@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjhhODJiZGQtZjFmYS00ZmUxLWI2NmUtMzJkZThjMjliOTIy%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAAFrkyBA==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAV_McqAAA=",
+    "createdDateTime": "2024-10-28T19:39:57.3277834Z",
+    "lastModifiedDateTime": "2024-10-28T21:41:13.5564424Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAAFrkyBA==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E0080000000010B2676F7929DB01000000000000000010000000C8A79864E98F7242AEDD0562335C7759",
+    "uid": "040000008200E00074C5B7101A82E0080000000010B2676F7929DB01000000000000000010000000C8A79864E98F7242AEDD0562335C7759",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "BVG Planung",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAV%2BMcqAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": false,
+    "onlineMeetingProvider": "unknown",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-10-28T19:39:58.6551308Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2024-10-30T10:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2024-10-30T10:45:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationType": "default",
+      "uniqueId": "Konferenzraum 01",
+      "uniqueIdType": "private"
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Enrico Ausborn",
+          "address": "e.ausborn@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Nina Handke",
+          "address": "n.handke@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Paul Wehle",
+          "address": "p.wehle@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Enrico Ausborn",
+        "address": "e.ausborn@a-sqa.de"
+      }
+    },
+    "onlineMeeting": null,
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAADucF8w==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAHKt-fAAA=",
+    "createdDateTime": "2024-10-11T12:56:52.2675983Z",
+    "lastModifiedDateTime": "2024-10-17T08:29:42.7432819Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAADucF8w==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E0080000000060A12183ED1BDB010000000000000000100000002318BCFDAFFEF84FB18402F5464CFA2F",
+    "uid": "040000008200E00074C5B7101A82E0080000000060A12183ED1BDB010000000000000000100000002318BCFDAFFEF84FB18402F5464CFA2F",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "Terminals - Testteam",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAHKt%2FfAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": false,
+    "onlineMeetingProvider": "unknown",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-10-11T12:56:53.7860871Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2024-10-21T07:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2024-10-21T07:40:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationType": "default",
+      "uniqueId": "Konferenzraum 01",
+      "uniqueIdType": "private"
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Enrico Ausborn",
+          "address": "e.ausborn@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Steve Plath",
+          "address": "s.plath@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Dennis Barnick",
+          "address": "d.barnick@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "declined",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Martin Bürger",
+          "address": "m.buerger@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Kim-Celine Brandt",
+          "address": "k.brandt@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Enrico Ausborn",
+        "address": "e.ausborn@a-sqa.de"
+      }
+    },
+    "onlineMeeting": null,
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAAByrE8w==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAHKt-eAAA=",
+    "createdDateTime": "2024-10-11T08:09:25.6940326Z",
+    "lastModifiedDateTime": "2024-10-11T08:42:12.3305293Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAAByrE8w==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "W. Europe Standard Time",
+    "originalEndTimeZone": "W. Europe Standard Time",
+    "iCalUId": "040000008200E00074C5B7101A82E00800000000F95D4CE0B41BDB0100000000000000001000000066C52DFB8AD9664F99246C60A3C08097",
+    "uid": "040000008200E00074C5B7101A82E00800000000F95D4CE0B41BDB0100000000000000001000000066C52DFB8AD9664F99246C60A3C08097",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": false,
+    "hasAttachments": false,
+    "subject": "STLG: Budges, Ziele & Hürden 2025",
+    "bodyPreview": "",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": false,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAHKt%2FeAAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": true,
+    "onlineMeetingProvider": "teamsForBusiness",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "accepted",
+      "time": "2024-10-11T08:09:27.4678182Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2024-11-04T10:00:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2024-11-04T10:30:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "Konferenzraum 01",
+      "locationUri": "Konferenzraum01@a-sqa.de",
+      "locationType": "conferenceRoom",
+      "uniqueId": "Konferenzraum01@a-sqa.de",
+      "uniqueIdType": "directory",
+      "address": {
+        "street": "",
+        "city": "",
+        "state": "",
+        "countryOrRegion": "",
+        "postalCode": ""
+      },
+      "coordinates": {}
+    },
+    "locations": [
+      {
+        "displayName": "Konferenzraum 01",
+        "locationUri": "Konferenzraum01@a-sqa.de",
+        "locationType": "conferenceRoom",
+        "uniqueId": "Konferenzraum01@a-sqa.de",
+        "uniqueIdType": "directory",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "countryOrRegion": "",
+          "postalCode": ""
+        },
+        "coordinates": {}
+      }
+    ],
+    "recurrence": null,
+    "attendees": [
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Alexander Morgner",
+          "address": "a.morgner@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Enrico Ausborn",
+          "address": "e.ausborn@a-sqa.de"
+        }
+      },
+      {
+        "type": "required",
+        "status": {
+          "response": "none",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Rick Korau",
+          "address": "r.korau@a-sqa.de"
+        }
+      },
+      {
+        "type": "resource",
+        "status": {
+          "response": "accepted",
+          "time": "0001-01-01T00:00:00Z"
+        },
+        "emailAddress": {
+          "name": "Konferenzraum 01",
+          "address": "Konferenzraum01@a-sqa.de"
+        }
+      }
+    ],
+    "organizer": {
+      "emailAddress": {
+        "name": "Alexander Morgner",
+        "address": "a.morgner@a-sqa.de"
+      }
+    },
+    "onlineMeeting": {
+      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDFjZDI4YmItMjk0Zi00OGZlLWEyMzktMTgyZTgwZTg3ZDNi%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
+    },
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  }
+]

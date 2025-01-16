@@ -33,16 +33,11 @@ header {
   color: #007bb5;
   border: 2px solid #007bb5;
   border-radius: 8px;
-  padding: 8px 15px;
+  padding: 16px 60px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
   position: relative;
-}
-
-.header-button:hover {
-  background-color: #0e4a66;
-  color: white;
 }
 
 .form-container {

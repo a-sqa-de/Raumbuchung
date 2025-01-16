@@ -25,7 +25,7 @@ function getDayDisplay(dateStr) {
   } else if (dayDifference === 1) {
     return "(morgen)";
   } else if (dayDifference > 1) {
-    return `(in ${dayDifference} Tagen)`;
+    return `<em>in ${dayDifference} Tagen</em>`;
   } 
 }
 
@@ -41,9 +41,10 @@ function updateCountdown(nextEventStartTime) {
   const timeDifference = nextEventTime - now;
 
   if (timeDifference > 0) {
-    const hours = String(Math.floor((timeDifference / (1000 * 60 * 60)) % 24)).padStart(2, "0");
-    const minutes = String(Math.floor((timeDifference / (1000 * 60)) % 60)).padStart(2, "0");
-    const seconds = String(Math.floor((timeDifference / 1000) % 60)).padStart(2, "0");
+    const totalSeconds = Math.floor(timeDifference / 1000);
+    const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+    const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+    const seconds = String(totalSeconds % 60).padStart(2, "0");
 
     currentTimeContainer.textContent = `Nächstes Meeting in: ${hours} Stunden & ${minutes} Minuten`;
   } else {
@@ -60,8 +61,7 @@ async function updateMeetings() {
       throw new Error("Fehler beim Laden der JSON-Daten");
     }
 
-    const graphData = await response.json();
-    const bookings = graphData.value;
+    const bookings = await response.json();
 
     // Aktuelles Datum/Zeit
     const now = new Date();
@@ -83,7 +83,7 @@ async function updateMeetings() {
     // 3. Aktuelles Event anzeigen
     if (currentEvent) {
       currentEventContainer.querySelector("#current-title").textContent = `${currentEvent.subject}`;
-      currentEventContainer.querySelector("#current-organizer").textContent = `${currentEvent.organizer.name}`;
+      currentEventContainer.querySelector("#current-organizer").textContent = `${currentEvent.organizer.emailAddress.name}`;
       currentEventContainer.querySelector("#current-time").textContent = `${formatTime(currentEvent.start.dateTime)} 
         - ${formatTime(currentEvent.end.dateTime)}`;
       currentEventContainer.classList.remove("hidden");
@@ -98,7 +98,7 @@ async function updateMeetings() {
         const nextEventStartTime = nextEvent.start.dateTime;
 
         updateCountdown(nextEventStartTime);
-        setInterval(() => updateCountdown(nextEventStartTime), 1000); // Jede Sekunde aktualisieren
+        setInterval(() => updateCountdown(nextEventStartTime), 60000); // aktualisiert den Zähler für Countdown jede Minute
       }
     }
 
@@ -126,10 +126,10 @@ async function updateMeetings() {
 
       // Karteninhalt
       card.innerHTML = `
-        <div><strong>${event.subject || "Kein Titel"}</strong> </div>
-        <div>${event.organizer.name}</div>
-        <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
         <div>${dayDisplay}</div>
+        <div><strong>${event.subject || "Kein Titel"}</strong> </div>
+        <div>${event.organizer.emailAddress.name}</div>
+        <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
       `;
 
       // Karte in den Container einfügen
@@ -140,105 +140,6 @@ async function updateMeetings() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleViewButton = document.getElementById("toggle-view");
-  const cardView = document.getElementById("card-view");
-  const calendarView = document.getElementById("calendar-view");
-  const calendarEl = document.getElementById("calendar");
-
-  let isCalendarView = false;
-  let calendar;
-
-  // Funktion zur Initialisierung der Ansichten
-  function initializeLayout() {
-    cardView.style.display = "block";
-    calendarView.style.display = "none";
-  }
-
-  // Funktion zur Korrektur von Layout-Problemen
-  function resetLayout() {
-    cardView.style.display = "block"; // Sicherstellen, dass Kartenansicht sichtbar bleibt
-    cardView.style.height = "auto";
-    cardView.offsetHeight; // Reflow erzwingen
-  }
-
-  toggleViewButton.addEventListener("click", () => {
-    isCalendarView = !isCalendarView;
-
-    if (isCalendarView) {
-      cardView.style.display = "none"; // Versteckt die Kartenansicht
-      calendarView.style.display = "block"; // Zeigt die Kalenderansicht
-      toggleViewButton.textContent = "Dashboard";
-
-      if (!calendar) {
-        calendar = new FullCalendar.Calendar(calendarEl, {
-          contentHeight: "auto",
-          initialView: "dayGridWeek",
-          locale: "de",
-          firstDay: 1,
-          hiddenDays: [0, 6], // Sonntag (0) und Samstag (6) werden ausgeblendet
-          headerToolbar: {
-            left: "",
-            center: "title",
-          },
-          eventTimeFormat: { // Zeitformat anpassen
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false // 24-Stunden-Format
-          },
-          buttonText: { // Anpassung der Button-Texte
-            today: "Heute"
-          },
-          events: [],
-        });
-      }
-
-      calendar.render();
-    } else {
-      calendarView.style.display = "none"; // Versteckt die Kalenderansicht
-      cardView.style.display = "block"; // Zeigt die Kartenansicht
-      toggleViewButton.textContent = "Wochenansicht";
-
-      // Korrigiere Layout nach dem Wechsel
-      resetLayout();
-    }
-  });
-
-  async function loadAndDisplayMeetings() {
-    try {
-      const response = await fetch("buchungen.json");
-      if (!response.ok) {
-        throw new Error("Fehler beim Laden der JSON-Daten");
-      }
-
-      const graphData = await response.json();
-      const bookings = graphData.value;
-
-      const calendarEvents = bookings.map((booking) => ({
-        title: booking.subject,
-        start: booking.start.dateTime,
-        end: booking.end.dateTime,
-      }));
-
-      if (calendar) {
-        calendar.removeAllEvents();
-        calendar.addEventSource(calendarEvents);
-      }
-
-      updateMeetings(bookings);
-    } catch (error) {
-      console.error("Fehler beim Verarbeiten der Daten:", error);
-    }
-  }
-
-  // Initialisiere das Layout beim Laden der Seite
-  initializeLayout();
-
-  //Lädt alle Meetings und aktualisiert diese jede Sekunde
-  loadAndDisplayMeetings();
-  setInterval(loadAndDisplayMeetings, 1000);
-});
-
 updateMeetings();
 
-setInterval(updateMeetings, 1000);
+setInterval(updateMeetings, 30000);
