@@ -12,6 +12,11 @@ Eine kleine Webandwendung zum Buchen von Konferenzräumen, welche über einen We
 - Lokal ausführbar - dank HTML!
 
 ## Benötigte Nodes
+Die nodes müssen in der Ordnerstruktur "Backend" installiert werden. die .env ist bei dem Admin / Entwickler anzufragen und muss ebenfalls im Backendordner hinterlegt werden. Öffne am besten eine IDE deiner Wahl und gebe die Befehle im Terminal dort ein. Beachte bitte, das diese im richtigen Ordner installiert werden müssen. Mit dem Befehl:  
+- dir
+wird der aktuelle Pfad angezeigt. Bist du nicht im .\backend, musst du dich dorthin begeben z.B. mit:
+- - cd "Speicherort der Webanwendung".\backend
+
 ### dotenv
 - npm install dotenv    
 Wird benötigt, um sensible Daten geheim zu halten.
@@ -24,11 +29,12 @@ Wird benötigt, um einen lokalen Server zu starten.
 - npm install axios    
 Wird für die POST und GET Abfragen an MS Graph benötigt.
 
-Die nodes müssen in der Ordnerstruktur "Backend" installiert werden. die .env ist bei dem Admin / Entwickler anzufragen und muss ebenfalls im Backendordner hinterlegt werden.
-
 ## Server starten
 Mit dem Befehl "node websocket-server.js" startet man den Server. WICHTIG! Man muss zum Pfad des "Backend" Ordners wechseln. Nutzue hierfür:  
-- cd "Speicherort der Webanwendung".\Backend
+- cd "Speicherort der Webanwendung".\backend
+Überprüfe mit folgendem Befehl, ob du im richtigen Verzeichnis bist:
+- dir
+Sofern im Terminallog "websocket-server.js" angezeigt wird, bist du richtig.
 
 ### Fixed
 GUI
