@@ -27,7 +27,8 @@ Wird für die POST und GET Abfragen an MS Graph benötigt.
 Die nodes müssen in der Ordnerstruktur "Backend" installiert werden. die .env ist bei dem Admin / Entwickler anzufragen und muss ebenfalls im Backendordner hinterlegt werden.
 
 ## Server starten
-Mit dem Befehl "node websocket-server.js" startet man den Server. WICHTIG! Man muss zum Pfad des "Backend" Ordners wechseln. Nutzue hierfür "cd "Speicherort der Webanwendung".\Backend
+Mit dem Befehl "node websocket-server.js" startet man den Server. WICHTIG! Man muss zum Pfad des "Backend" Ordners wechseln. Nutzue hierfür:  
+- cd "Speicherort der Webanwendung".\Backend
 
 ### Fixed
 GUI
