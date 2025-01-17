@@ -4,7 +4,7 @@ Eine kleine Webandwendung zum Buchen von Konferenzräumen, welche über einen We
 ## Features
 - GUI für schnellen Überblick über Raumbuchungen
 - API Anbindung zur Aktualisierung von JSON-Datei via WebSocket
-- API ANbindung zum anlegen neuer Termine via Formular
+- API Anbindung zum anlegen neuer Termine via Formular
 - JSON als Ausgangslage für Meetingübersicht lesbar
 - Sortierung der Events nach chronologischer Reihenfolge (Starttermin)
 - Countdown bis zum nächsten Meeting in Kartenansicht
@@ -24,7 +24,10 @@ Wird benötigt, um einen lokalen Server zu starten.
 - npm install axios    
 Wird für die POST und GET Abfragen an MS Graph benötigt.
 
-Die nodes müssen in der Ordnerstruktur "Backend" installiert werden. die .env ist bei dem Admin / Entwickler anzufragen und muss ebenfalls im Backendordner hinterlegt werden. 
+Die nodes müssen in der Ordnerstruktur "Backend" installiert werden. die .env ist bei dem Admin / Entwickler anzufragen und muss ebenfalls im Backendordner hinterlegt werden.
+
+## Server starten
+Mit dem Befehl "node websocket-server.js" startet man den Server. WICHTIG! Man muss zum Pfad des "Backend" Ordners wechseln. Nutzue hierfür "cd "Speicherort der Webanwendung".\Backend
 
 ### Fixed
 GUI
