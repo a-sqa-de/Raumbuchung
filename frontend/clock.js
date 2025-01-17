@@ -3,7 +3,7 @@ function clock() {
     const ClockContainer = document.getElementById("clock");
   
     if (ClockContainer) {
-      ClockContainer.textContent = `Uhrzeit: ${now.toLocaleTimeString([], {
+      ClockContainer.textContent = `${now.toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
       })}`;
@@ -11,4 +11,4 @@ function clock() {
   }
 
   clock();
-  setInterval(clock, 1000);
+  setInterval(clock, 10000); //aktualisiert Zeit alle 10 Sekunden

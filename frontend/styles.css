@@ -40,10 +40,10 @@ header {
   position: relative;
 }
 
-.form-container {
-  max-width: 800px;
+#form-container {
+  max-width: 600px;
   min-height: min-content;
-  width: 90%; /* Passt sich an den Bildschirm an */
+  width: 50%; /* Passt sich an den Bildschirm an */
   padding: 10px; /* Mehr Polsterung */
   margin: auto; /* Zentriere das Formular horizontal */
   background-color: #ffffff;
@@ -217,4 +217,33 @@ footer {
 
 #clock {
   font-size: large;
+}
+
+.time-container {
+  margin-bottom: 20px;
+}
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+.time-card {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.time-card.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+  transform: scale(1.05);
+}
+.time-card:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.03);
 }

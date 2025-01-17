@@ -1,65 +1,89 @@
-// Funktion, um das Formular zu erstellen und einzufügen
-async function createForm() {
-  const body = document.body;
+// WebSocket-Verbindung herstellen
+const ws = new WebSocket('ws://localhost:5500');
+console.log('WebSocket initialisiert:', ws); // Prüfen, ob der WebSocket initialisiert ist
 
-  // Hauptcontainer für das Formular erstellen
-  const formContainer = document.createElement("div");
-  formContainer.className = "form-container";
+ws.onopen = () => {
+  console.log('WebSocket-Verbindung hergestellt');
+
+  ws.onopen = () => {
+    console.log('WebSocket-Verbindung hergestellt');
+  };
+  
+  ws.onerror = (error) => {
+    console.error('WebSocket-Fehler:', error);
+  };
+  
+  ws.onclose = () => {
+    console.log('WebSocket-Verbindung geschlossen');
+  };
+};
+
+ws.onmessage = (event) => {
+  const message = JSON.parse(event.data);
+
+  if (message.type === 'event-created') {
+    // Erfolgreiche Erstellung des Termins
+    alert('Termin erfolgreich erstellt:\n' + JSON.stringify(message.data, null, 2));
+  } else if (message.type === 'error') {
+    // Fehler bei der Termin-Erstellung
+    alert(`Fehler: ${message.message}`);
+  } else {
+    console.log('Unbekannte Nachricht vom Server:', message);
+  }
+};
+
+ws.onerror = (error) => {
+  console.error('WebSocket-Fehler:', error);
+};
+
+// Funktion, um das Formular zu erstellen und in #form-container einzufügen
+function createForm() {
+  console.log("Formular wird erstellt...");
+  const formContainer = document.getElementById("form-container");
+
+  if (!formContainer) {
+    console.error("Fehler: Container mit ID 'form-container' nicht gefunden.");
+    return;
+  }
 
   // Formular erstellen
   const form = document.createElement("form");
   form.className = "booking-form";
-  form.action = "create_event.php";
-  form.method = "POST";
 
-  form.addEventListener("submit", (event) => {
-    const selectedTime = document.getElementById("selected-time").value;
-    if (!selectedTime) {
-      event.preventDefault();
-      alert("Bitte wähle eine Startzeit aus.");
-    }
-  });
+  // Titel-Feld
+  const titleField = createInputField("Titel", "titel", "Wie heißt dein Event?");
+  form.appendChild(titleField);
 
-  // Felder und ihre Platzhalter
-  const fields = [
-    { label: "Titel", id: "titel", name: "titel", type: "text", placeholder: "Wie heißt dein Event?", required: true },
-    { label: "Organisator", id: "organizer", name: "organizer", type: "text", placeholder: "Name des Organisators", required: true },
-  ];
+  // Organisator-Feld
+  const organizerField = createInputField("Organisator", "organizer", "Name des Organisators");
+  form.appendChild(organizerField);
 
-  fields.forEach((field) => {
-    const fieldContainer = document.createElement("div");
-    fieldContainer.className = "field-container";
+  // Aktuelles Datum-Feld
+  const dateField = createInputField("Aktuelles Datum", "current-date", "", true);
+  const today = new Date().toISOString().split("T")[0];
+  dateField.querySelector("input").value = today;
+  form.appendChild(dateField);
 
-    const label = document.createElement("label");
-    label.htmlFor = field.id;
-    label.textContent = field.label;
-
-    const input = document.createElement("input");
-    input.type = field.type;
-    input.id = field.id;
-    input.name = field.name;
-    if (field.placeholder) input.placeholder = field.placeholder;
-    if (field.required) input.required = true;
-
-    fieldContainer.appendChild(label);
-    fieldContainer.appendChild(input);
-    form.appendChild(fieldContainer);
-  });
-
-  // Startzeiten als Karten anzeigen
+  // Zeit-Feld für Startzeit und Endzeit
   const timeContainer = document.createElement("div");
-  timeContainer.className = "time-container";
+  timeContainer.className = "field-container";
 
   const timeLabel = document.createElement("label");
-  timeLabel.textContent = "Startzeit auswählen:";
-  timeLabel.htmlFor = "available-times";
+  timeLabel.textContent = "Start- und Endzeit auswählen:";
   timeContainer.appendChild(timeLabel);
 
-  const hiddenInput = document.createElement("input");
-  hiddenInput.type = "hidden";
-  hiddenInput.id = "selected-time";
-  hiddenInput.name = "zeit";
-  timeContainer.appendChild(hiddenInput);
+  const hiddenStartInput = document.createElement("input");
+  hiddenStartInput.type = "hidden";
+  hiddenStartInput.id = "selected-start-time";
+  hiddenStartInput.name = "start-time";
+
+  const hiddenEndInput = document.createElement("input");
+  hiddenEndInput.type = "hidden";
+  hiddenEndInput.id = "selected-end-time";
+  hiddenEndInput.name = "end-time";
+
+  timeContainer.appendChild(hiddenStartInput);
+  timeContainer.appendChild(hiddenEndInput);
 
   const availableTimesContainer = document.createElement("div");
   availableTimesContainer.id = "available-times";
@@ -68,165 +92,128 @@ async function createForm() {
 
   form.appendChild(timeContainer);
 
-  // Dauer-Auswahl hinzufügen
-  const durationContainer = document.createElement("div");
-  durationContainer.className = "field-container";
-
-  const durationLabel = document.createElement("label");
-  durationLabel.textContent = "Dauer (Minuten):";
-  durationContainer.appendChild(durationLabel);
-
-  const durationSelect = document.createElement("select");
-  durationSelect.id = "dauer";
-  durationSelect.name = "dauer";
-  [15, 30, 45, 60, 90, 120].forEach((duration) => {
-    const option = document.createElement("option");
-    option.value = duration;
-    option.textContent = `${duration} Minuten`;
-    durationSelect.appendChild(option);
-  });
-
-  durationSelect.addEventListener("change", () => {
-    const startTime = hiddenInput.value;
-    if (startTime) {
-      updateEndTime(startTime, durationSelect.value);
-    }
-    loadAvailableTimes(); // Verfügbare Zeiten neu laden
-  });
-
-  durationContainer.appendChild(durationSelect);
-  form.appendChild(durationContainer);
-
-  // Endzeit-Feld hinzufügen
-  const endTimeContainer = document.createElement("div");
-  endTimeContainer.className = "field-container";
-
-  const endTimeLabel = document.createElement("label");
-  endTimeLabel.textContent = "Endzeit:";
-  endTimeContainer.appendChild(endTimeLabel);
-
-  const endTimeInput = document.createElement("input");
-  endTimeInput.type = "text";
-  endTimeInput.id = "endzeit";
-  endTimeInput.name = "endzeit";
-  endTimeInput.readOnly = true;
-  endTimeContainer.appendChild(endTimeInput);
-  form.appendChild(endTimeContainer);
-
-  // Funktion zur Berechnung der Endzeit
-  function updateEndTime(startTime, duration) {
-    const [hours, minutes] = startTime.split(":").map(Number);
-    const startDate = new Date();
-    startDate.setHours(hours, minutes, 0, 0);
-
-    const endDate = new Date(startDate.getTime() + duration * 60000);
-    endTimeInput.value = `${endDate.getHours().toString().padStart(2, "0")}:${endDate.getMinutes()
-      .toString()
-      .padStart(2, "0")}`;
-  }
-
-  // Funktion zur Ermittlung der verfügbaren Startzeiten
-  async function loadAvailableTimes() {
-    try {
-      const response = await fetch("buchungen.json");
-      if (!response.ok) throw new Error("Fehler beim Laden der Buchungen");
-
-      const bookings = await response.json();
-      const now = new Date();
-      now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0); // Aufrunden auf den nächsten 15-Minuten-Block
-      const endOfDay = new Date();
-      endOfDay.setHours(18, 0, 0, 0);
-
-      availableTimesContainer.innerHTML = ""; // Bestehende Buttons löschen
-
-      while (now <= endOfDay) {
-        const timeString = `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes()
-          .toString()
-          .padStart(2, "0")}`;
-        const nextTime = new Date(now.getTime() + durationSelect.value * 60000);
-
-        // Konfliktprüfung mit bestehenden Buchungen
-        const hasConflict = bookings.some((booking) => {
-          const bookingStart = new Date(booking.start.dateTime);
-          const bookingEnd = new Date(booking.end.dateTime);
-          return now < bookingEnd && nextTime > bookingStart;
-        });
-
-        if (!hasConflict) {
-          const card = document.createElement("div");
-          card.className = "time-card";
-          card.textContent = timeString;
-
-          card.addEventListener("click", () => {
-            // Entferne die Markierung von allen Karten
-            document.querySelectorAll(".time-card").forEach((btn) => btn.classList.remove("selected"));
-
-            // Markiere die ausgewählte Karte
-            card.classList.add("selected");
-
-            // Speichere den Wert im versteckten Input
-            hiddenInput.value = timeString;
-
-            // Aktualisiere die Endzeit basierend auf der gewählten Startzeit und Dauer
-            updateEndTime(timeString, durationSelect.value);
-          });
-
-          availableTimesContainer.appendChild(card);
-        }
-
-        now.setMinutes(now.getMinutes() + 15); // Erhöhe um 15 Minuten
-      }
-    } catch (error) {
-      console.error("Fehler beim Laden der verfügbaren Zeiten:", error);
-    }
-  }
-
-  durationSelect.addEventListener("change", loadAvailableTimes);
-  await loadAvailableTimes(); // Initiale Ladezeit
-
-  // Submit-Button hinzufügen
+  // Submit-Button
   const submitButton = document.createElement("button");
   submitButton.className = "submit-button";
   submitButton.type = "submit";
   submitButton.textContent = "Termin eintragen";
   form.appendChild(submitButton);
 
+  // Form in den Container einfügen
+  formContainer.innerHTML = ""; // Vorherigen Inhalt löschen
   formContainer.appendChild(form);
-  body.appendChild(formContainer);
 
-  // Styles hinzufügen
-  const style = document.createElement("style");
-  style.textContent = `
-    .time-container {
-      margin-bottom: 20px;
+  // Zeiten laden
+  loadAvailableTimes(availableTimesContainer, hiddenStartInput, hiddenEndInput);
+
+  // Formular-Submit
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  
+    const title = document.getElementById("titel").value;
+    const organizer = document.getElementById("organizer").value;
+    const currentDate = document.getElementById("current-date").value;
+    const startTime = hiddenStartInput.value;
+    const endTime = hiddenEndInput.value;
+  
+    if (!startTime || !endTime) {
+      alert("Bitte Start- und Endzeit auswählen!");
+      return;
     }
-    .time-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
+  
+    const eventData = {
+      title,
+      organizer,
+      date: currentDate,
+      start: startTime,
+      end: endTime,
+    };
+  
+    if (ws.readyState === WebSocket.OPEN) {
+      const message = JSON.stringify({ type: "create-event", data: eventData });
+      console.log('Daten werden gesendet:', message); // Log vor dem Senden
+      try {
+        ws.send(message);
+        console.log('Nachricht gesendet'); // Log nach dem Senden
+      } catch (error) {
+        console.error('Fehler beim Senden der Nachricht:', error);
+      }
+    } else {
+      console.error('WebSocket nicht verfügbar. Status:', ws.readyState);
+    }});
+}
+
+// Hilfsfunktion zum Erstellen eines Eingabefelds
+function createInputField(labelText, id, placeholder = "", readonly = false) {
+  const fieldContainer = document.createElement("div");
+  fieldContainer.className = "field-container";
+
+  const label = document.createElement("label");
+  label.textContent = labelText;
+  label.htmlFor = id;
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.id = id;
+  input.name = id;
+  input.placeholder = placeholder;
+  input.required = !readonly;
+  input.readOnly = readonly;
+
+  fieldContainer.appendChild(label);
+  fieldContainer.appendChild(input);
+  return fieldContainer;
+}
+
+// Funktion zum Laden der verfügbaren Zeiten
+async function loadAvailableTimes(container, startInput, endInput) {
+  try {
+    const response = await fetch("buchungen.json");
+    if (!response.ok) throw new Error("Fehler beim Laden der Buchungen");
+
+    const bookings = await response.json();
+    const now = new Date();
+    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0);
+    const endOfDay = new Date();
+    endOfDay.setHours(18, 0, 0, 0);
+
+    container.innerHTML = ""; // Vorherigen Inhalt löschen
+
+    while (now <= endOfDay) {
+      const timeString = `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
+
+      const card = document.createElement("div");
+      card.className = "time-card";
+      card.textContent = timeString;
+
+      card.addEventListener("click", () => {
+        if (card.classList.contains("selected")) {
+          // Karte erneut deaktivieren
+          card.classList.remove("selected");
+          if (startInput.value === timeString) startInput.value = "";
+          if (endInput.value === timeString) endInput.value = "";
+        } else {
+          // Karte aktivieren
+          if (!startInput.value) {
+            startInput.value = timeString;
+            card.classList.add("selected");
+          } else if (!endInput.value && timeString > startInput.value) {
+            endInput.value = timeString;
+            card.classList.add("selected");
+          } else {
+            alert("Endzeit muss nach der Startzeit liegen!");
+          }
+        }
+      });
+
+      container.appendChild(card);
+      now.setMinutes(now.getMinutes() + 15);
     }
-    .time-card {
-      background: #f9f9f9;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .time-card.selected {
-      background-color: #007bff;
-      color: white;
-      border-color: #0056b3;
-      transform: scale(1.05);
-    }
-    .time-card:hover {
-      background-color: #e0e0e0;
-      transform: scale(1.03);
-    }
-  `;
-  document.head.appendChild(style);
+  } catch (error) {
+    console.error("Fehler beim Laden der verfügbaren Zeiten:", error);
+  }
 }
 
 createForm();
