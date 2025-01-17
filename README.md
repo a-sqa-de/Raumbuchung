@@ -11,9 +11,9 @@ Eine kleine Webandwendung zum Buchen von Konferenzräumen, welche über einen We
 - Toogle Button für Wechsel auf Kalenderansicht und zurück
 - Lokal ausführbar - dank HTML!
 
-## benötigte Nodes
+## Benötigte Nodes
 ### dotenv
-- npm install dotenv
+- npm install dotenv    
 Wird benötigt, um sensible Daten geheim zu halten.
 
 ### ws 
@@ -21,7 +21,7 @@ Wird benötigt, um sensible Daten geheim zu halten.
 Wird benötigt, um einen lokalen Server zu starten. 
 
 ### axios
-- npm install axios
+- npm install axios    
 Wird für die POST und GET Abfragen an MS Graph benötigt.
 
 Die nodes müssen in der Ordnerstruktur "Backend" installiert werden. die .env ist bei dem Admin / Entwickler anzufragen und muss ebenfalls im Backendordner hinterlegt werden. 
