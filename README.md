@@ -65,4 +65,5 @@ Aktuell muss man noch auf den Link klicken
 
 ## GUI
 - Formular passt sich "Landscape"-Ansicht noch nicht an
-- Aktuelles Meeting wird vorzeitig ausgeblendet? | noch nicht bestätigt
+- Inputfield "Organisator/-in" noch ohne Funktion
+- - Dashboard zeigt UTC Zeit an statt berliner Zeit
