@@ -35,11 +35,11 @@ const createEventInGraph = async (eventData) => {
         subject: eventData.title,
         start: {
           dateTime: eventData.start,
-          timeZone: 'W. Europe Standard Time',
+          timeZone: 'UTC',
         },
         end: {
           dateTime: eventData.end,
-          timeZone: 'W. Europe Standard Time',
+          timeZone: 'UTC',
         },
         body: {
           contentType: 'HTML',
@@ -68,15 +68,18 @@ const createEventInGraph = async (eventData) => {
 const fetchCalendarData = async () => {
   try {
     const token = await getAccessToken(); // Zugriffstoken abrufen
+    const headers = { Authorization: `Bearer ${token}` };
 
-    const response = await axios.get(CALENDAR_EVENTS_ENDPOINT, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    let events = [];
+    let endpoint = 'https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events';
 
-    console.log('Kalenderdaten erfolgreich abgerufen:', response.data.value);
-    return response.data.value;
+    while (endpoint) {
+      const response = await axios.get(endpoint, { headers });
+      events = events.concat(response.data.value);
+      endpoint = response.data['@odata.nextLink'] || null; // Nächste Seite abrufen, falls vorhanden
+    }
+
+    return events;
   } catch (error) {
     console.error('Fehler beim Abrufen der Kalenderdaten:', error.response?.data || error.message);
     throw error;
@@ -84,16 +87,40 @@ const fetchCalendarData = async () => {
 };
 
 // Funktion zum Speichern der Kalenderdaten in einer JSON-Datei
+const timeZoneBerlin = (dateTime) => {
+  const date = new Date(dateTime);
+
+  // Konvertiere die UTC-Zeit in die Berlin-Zeit
+  const options = { timeZone: 'Europe/Berlin', hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+  const formatter = new Intl.DateTimeFormat('de-DE', options);
+  
+  // Extrahiere die umgestellte Zeit und baue eine ISO-Zeit daraus
+  const parts = formatter.formatToParts(date);
+  const adjustedDate = new Date(
+    `${parts.find(p => p.type === 'year').value}-${parts.find(p => p.type === 'month').value}-${parts.find(p => p.type === 'day').value}T${parts.find(p => p.type === 'hour').value}:${parts.find(p => p.type === 'minute').value}:${parts.find(p => p.type === 'second').value}`
+  );
+
+  return adjustedDate.toISOString();
+};
+
 const saveCalendarData = async () => {
   try {
     const events = await fetchCalendarData();
+
+    const adjustedEvents = events.map(event => ({
+      ...event,
+      start: { ...event.start, dateTime: timeZoneBerlin(event.start.dateTime) },
+      end: { ...event.end, dateTime: timeZoneBerlin(event.end.dateTime) },
+    }));
+
     const filePath = path.join(__dirname, '../Frontend/buchungen.json');
-    fs.writeFileSync(filePath, JSON.stringify(events, null, 2));
+    fs.writeFileSync(filePath, JSON.stringify(adjustedEvents, null, 2));
     console.log('Kalenderdaten erfolgreich gespeichert.');
   } catch (error) {
     console.error('Fehler beim Speichern der Kalenderdaten:', error.message);
   }
 };
+
 
 // WebSocket-Verbindung behandeln
 wss.on('connection', ws => {

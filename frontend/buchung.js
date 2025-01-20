@@ -23,7 +23,7 @@ ws.onmessage = (event) => {
 
   if (message.type === 'event-created') {
     // Erfolgreiche Erstellung des Termins
-    alert('Termin erfolgreich erstellt:\n' + JSON.stringify(message.data, null, 2));
+    alert('Termin erfolgreich erstellt');
   } else if (message.type === 'error') {
     // Fehler bei der Termin-Erstellung
     alert(`Fehler: ${message.message}`);
