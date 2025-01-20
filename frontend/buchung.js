@@ -162,7 +162,6 @@ function createInputField(labelText, id, placeholder = "", readonly = false) {
   return fieldContainer;
 }
 
-// Funktion zum Laden der verfügbaren Zeiten
 async function loadAvailableTimes(container, startInput, endInput) {
   try {
     const response = await fetch("buchungen.json");
@@ -207,11 +206,13 @@ async function loadAvailableTimes(container, startInput, endInput) {
         }
 
         if (card.classList.contains("selected")) {
+          // Karte deaktivieren
           card.classList.remove("selected");
           if (startInput.value === timeString) startInput.value = "";
           if (endInput.value === timeString) endInput.value = "";
         } else {
           if (!startInput.value) {
+            // Setze Startzeit
             startInput.value = timeString;
             card.classList.add("selected");
           } else if (!endInput.value) {
@@ -219,11 +220,24 @@ async function loadAvailableTimes(container, startInput, endInput) {
               availableTimes.find((t) => t.timeString === startInput.value).currentTime
             );
 
+            // Prüfen, ob der Zeitraum zwischen Start- und Endzeit frei ist
+            const isPeriodBlocked = bookings.some((booking) => {
+              const bookingStart = new Date(booking.start.dateTime);
+              const bookingEnd = new Date(booking.end.dateTime);
+              return selectedStart < bookingEnd && currentTime > bookingStart;
+            });
+
             if (currentTime <= selectedStart) {
               alert("Die Endzeit muss nach der Startzeit liegen!");
               return;
             }
 
+            if (isPeriodBlocked) {
+              alert("Der gewählte Zeitraum überschneidet sich mit einem bestehenden Termin.");
+              return;
+            }
+
+            // Setze Endzeit
             endInput.value = timeString;
             card.classList.add("selected");
           }
@@ -236,6 +250,7 @@ async function loadAvailableTimes(container, startInput, endInput) {
     console.error("Fehler beim Laden der verfügbaren Zeiten:", error);
   }
 }
+
 
 
 createForm();
