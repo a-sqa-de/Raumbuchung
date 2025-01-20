@@ -27,7 +27,9 @@ Sofern die .env Datei korrekt hinterlegt ist, authorisiert das Tool derzeit "Kon
 Die folgenden nodes, sowie die passende .env, müssen im Ordner "Backend" installiert bzw. hinterlegt werden.
 
 ### dotenv
-- npm install dotenv
+```bash
+npm install foobar
+```
 - - wird benötigt, um sensible Daten geheim zu halten und nicht versehentlich auf GitHiub zu posten. 
 
 ### ws 
