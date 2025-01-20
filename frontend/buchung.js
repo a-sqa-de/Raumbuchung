@@ -36,15 +36,9 @@ ws.onerror = (error) => {
   console.error('WebSocket-Fehler:', error);
 };
 
-// Funktion, um das Formular zu erstellen und in #form-container einzufügen
+// Erstellt das Formular
 function createForm() {
-  console.log("Formular wird erstellt...");
   const formContainer = document.getElementById("form-container");
-
-  if (!formContainer) {
-    console.error("Fehler: Container mit ID 'form-container' nicht gefunden.");
-    return;
-  }
 
   // Formular erstellen
   const form = document.createElement("form");
@@ -55,13 +49,16 @@ function createForm() {
   form.appendChild(titleField);
 
   // Organisator-Feld
-  const organizerField = createInputField("Organisator", "organizer", "Name des Organisators");
+  const organizerField = createInputField("Organisator*in", "organizer", "Dein Name");
   form.appendChild(organizerField);
 
   // Aktuelles Datum-Feld
   const dateField = createInputField("Aktuelles Datum", "current-date", "", true);
-  const today = new Date().toISOString().split("T")[0];
-  dateField.querySelector("input").value = today;
+
+  // Aktuelles Datum im deutschen Format (tt.mm.jjjj)
+  const today = new Date();
+  const formattedDate = `${String(today.getDate()).padStart(2, "0")}.${String(today.getMonth() + 1).padStart(2, "0")}.${today.getFullYear()}`;
+  dateField.querySelector("input").value = formattedDate;
   form.appendChild(dateField);
 
   // Zeit-Feld für Startzeit und Endzeit
@@ -123,7 +120,7 @@ function createForm() {
   
     const eventData = {
       title,
-      organizer,
+
       date: currentDate,
       start: startTime,
       end: endTime,
@@ -172,6 +169,7 @@ async function loadAvailableTimes(container, startInput, endInput) {
     if (!response.ok) throw new Error("Fehler beim Laden der Buchungen");
 
     const bookings = await response.json();
+
     const now = new Date();
     now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0);
     const endOfDay = new Date();
@@ -179,41 +177,65 @@ async function loadAvailableTimes(container, startInput, endInput) {
 
     container.innerHTML = ""; // Vorherigen Inhalt löschen
 
+    const availableTimes = [];
     while (now <= endOfDay) {
       const timeString = `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes()
         .toString()
         .padStart(2, "0")}`;
+      const currentTime = new Date(now);
 
+      const isBlocked = bookings.some((booking) => {
+        const bookingStart = new Date(booking.start.dateTime);
+        const bookingEnd = new Date(booking.end.dateTime);
+        return currentTime >= bookingStart && currentTime < bookingEnd;
+      });
+
+      availableTimes.push({ timeString, currentTime, isBlocked });
+      now.setMinutes(now.getMinutes() + 15);
+    }
+
+    availableTimes.forEach(({ timeString, currentTime, isBlocked }) => {
       const card = document.createElement("div");
       card.className = "time-card";
+      if (isBlocked) card.classList.add("blocked");
       card.textContent = timeString;
 
       card.addEventListener("click", () => {
+        if (isBlocked) {
+          alert("Diese Zeit ist bereits belegt.");
+          return;
+        }
+
         if (card.classList.contains("selected")) {
-          // Karte erneut deaktivieren
           card.classList.remove("selected");
           if (startInput.value === timeString) startInput.value = "";
           if (endInput.value === timeString) endInput.value = "";
         } else {
-          // Karte aktivieren
           if (!startInput.value) {
             startInput.value = timeString;
             card.classList.add("selected");
-          } else if (!endInput.value && timeString > startInput.value) {
+          } else if (!endInput.value) {
+            const selectedStart = new Date(
+              availableTimes.find((t) => t.timeString === startInput.value).currentTime
+            );
+
+            if (currentTime <= selectedStart) {
+              alert("Die Endzeit muss nach der Startzeit liegen!");
+              return;
+            }
+
             endInput.value = timeString;
             card.classList.add("selected");
-          } else {
-            alert("Endzeit muss nach der Startzeit liegen!");
           }
         }
       });
 
       container.appendChild(card);
-      now.setMinutes(now.getMinutes() + 15);
-    }
+    });
   } catch (error) {
     console.error("Fehler beim Laden der verfügbaren Zeiten:", error);
   }
 }
+
 
 createForm();

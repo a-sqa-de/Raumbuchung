@@ -35,11 +35,11 @@ const createEventInGraph = async (eventData) => {
         subject: eventData.title,
         start: {
           dateTime: eventData.start,
-          timeZone: 'UTC',
+          timeZone: 'W. Europe Standard Time',
         },
         end: {
           dateTime: eventData.end,
-          timeZone: 'UTC',
+          timeZone: 'W. Europe Standard Time',
         },
         body: {
           contentType: 'HTML',
@@ -176,7 +176,7 @@ wss.on('connection', ws => {
 });
 
 // Kalenderdaten alle 2 Minuten abrufen und speichern
-setInterval(saveCalendarData, fetchCalendarData, 2 * 60 * 1000);
+setInterval(saveCalendarData, 2 * 60 * 1000);
 
 // Beim Start einmal Daten abrufen und speichern
 saveCalendarData();

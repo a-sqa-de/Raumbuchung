@@ -38,12 +38,13 @@ header {
   font-weight: bold;
   transition: all 0.3s ease;
   position: relative;
+  margin-right: 100px;
+
 }
 
 #form-container {
-  max-width: 600px;
   min-height: min-content;
-  width: 50%; /* Passt sich an den Bildschirm an */
+  width: 70%; /* Passt sich an den Bildschirm an */
   padding: 10px; /* Mehr Polsterung */
   margin: auto; /* Zentriere das Formular horizontal */
   background-color: #ffffff;
@@ -139,8 +140,12 @@ header {
 #current-meeting #current-time {
   font-size: 1rem;
   font-weight: normal;
-  margin-top: 5px; /* Reduziere den Abstand nach oben */
+  margin-top: 20px; /* Reduziere den Abstand nach oben */
   margin-bottom: 0; /* Entferne zusätzlichen Abstand nach unten */
+}
+
+#current-meeting #current-attendees {
+  font-size: 1rem;
 }
 
 /* Allgemeine Kartenansicht */
@@ -195,11 +200,11 @@ header {
 /* Kalenderansicht */
 #calendar-view {
   background-color: white;
+  min-height: min-content;
   padding: 10px;
   border-radius: 12px;
   margin: 140px auto 20px;
   max-width: 95%;
-  height: calc(80vh - 200px); /* 80% der View Hight - 200px */
   overflow: hidden;
 }
 
@@ -245,5 +250,33 @@ footer {
 }
 .time-card:hover {
   background-color: #e0e0e0;
+  transform: scale(1.03);
+}
+
+.time-card {
+  background-color: #f9f9f9; /* Standardhintergrund */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.time-card.selected {
+  background-color: #007bff; /* Blau für ausgewählt */
+  color: white;
+  border-color: #0056b3;
+}
+
+.time-card.blocked {
+  background-color: #ffcccc; /* Rot für blockiert */
+  cursor: not-allowed; /* Zeigt an, dass die Karte nicht auswählbar ist */
+  border-color: #ff0000;
+}
+
+.time-card:hover:not(.blocked) {
+  background-color: #e0e0e0; /* Hover-Effekt nur für nicht blockierte Karten */
   transform: scale(1.03);
 }

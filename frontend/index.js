@@ -31,6 +31,7 @@ function getDayDisplay(dateStr) {
 function updateCountdown(nextEventStartTime) {
   const now = new Date();
   const nextEventTime = new Date(nextEventStartTime);
+  nextEventTime.setMinutes(nextEventTime.getMinutes() + 1);
   const currentTimeContainer = document.querySelector("#current-time");
 
   if (!currentTimeContainer) return;
@@ -132,9 +133,9 @@ async function updateMeetings() {
 
       card.innerHTML = `
         <div>${dayDisplay}</div>
+        <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
         <div><strong>${truncateTitle(event.subject)}</strong></div>
         <div>${event.organizer.emailAddress.name}</div>
-        <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
         <div>${attendeeList}</div>
       `;
 
@@ -152,7 +153,7 @@ function truncateTitle(title) {
 
 // Funktion: Teilnehmerliste erstellen
 function createAttendeeList(attendees) {
-  if (!attendees || attendees.length === 0) return "Keine Teilnehmer angelegt";
+  if (!attendees || attendees.length === 0) return "";
 
   const filteredAttendees = attendees.filter(
     (attendee) =>

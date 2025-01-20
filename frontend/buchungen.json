@@ -1,5 +1,145 @@
 [
   {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAATW5jXg==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AABNbdR3AAA=",
+    "createdDateTime": "2025-01-20T08:48:36.959715Z",
+    "lastModifiedDateTime": "2025-01-20T08:48:37.2123325Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAATW5jXg==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "UTC",
+    "originalEndTimeZone": "UTC",
+    "iCalUId": "040000008200E00074C5B7101A82E0080000000049145B18186BDB0100000000000000001000000027B7DD65C176534E91DAE73F80652E77",
+    "uid": "040000008200E00074C5B7101A82E0080000000049145B18186BDB0100000000000000001000000027B7DD65C176534E91DAE73F80652E77",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": true,
+    "hasAttachments": false,
+    "subject": " ",
+    "bodyPreview": "Organisator:\r\nDatum: 20.01.2025",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": true,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAABNbdR3AAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": false,
+    "onlineMeetingProvider": "unknown",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "organizer",
+      "time": "0001-01-01T00:00:00Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\nOrganisator: <br>\r\nDatum: 20.01.2025\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-01-20T12:45:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-01-20T13:15:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    },
+    "locations": [],
+    "recurrence": null,
+    "attendees": [],
+    "organizer": {
+      "emailAddress": {
+        "name": "Konferenzraum 01",
+        "address": "Konferenzraum01@a-sqa.de"
+      }
+    },
+    "onlineMeeting": null,
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
+    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAATW5jXQ==\"",
+    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AABNbdR2AAA=",
+    "createdDateTime": "2025-01-20T08:48:37.109575Z",
+    "lastModifiedDateTime": "2025-01-20T08:48:37.178233Z",
+    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAATW5jXQ==",
+    "categories": [],
+    "transactionId": null,
+    "originalStartTimeZone": "UTC",
+    "originalEndTimeZone": "UTC",
+    "iCalUId": "040000008200E00074C5B7101A82E008000000008B897018186BDB01000000000000000010000000FCA6A96563A31D4C94A5A246AA70101E",
+    "uid": "040000008200E00074C5B7101A82E008000000008B897018186BDB01000000000000000010000000FCA6A96563A31D4C94A5A246AA70101E",
+    "reminderMinutesBeforeStart": 15,
+    "isReminderOn": true,
+    "hasAttachments": false,
+    "subject": " ",
+    "bodyPreview": "Organisator:\r\nDatum: 20.01.2025",
+    "importance": "normal",
+    "sensitivity": "normal",
+    "isAllDay": false,
+    "isCancelled": false,
+    "isOrganizer": true,
+    "responseRequested": true,
+    "seriesMasterId": null,
+    "showAs": "busy",
+    "type": "singleInstance",
+    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAABNbdR2AAA%3D&exvsurl=1&path=/calendar/item",
+    "onlineMeetingUrl": null,
+    "isOnlineMeeting": false,
+    "onlineMeetingProvider": "unknown",
+    "allowNewTimeProposals": true,
+    "occurrenceId": null,
+    "isDraft": false,
+    "hideAttendees": false,
+    "responseStatus": {
+      "response": "organizer",
+      "time": "0001-01-01T00:00:00Z"
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n</head>\r\n<body>\r\nOrganisator: <br>\r\nDatum: 20.01.2025\r\n</body>\r\n</html>\r\n"
+    },
+    "start": {
+      "dateTime": "2025-01-20T12:45:00.0000000",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2025-01-20T13:15:00.0000000",
+      "timeZone": "UTC"
+    },
+    "location": {
+      "displayName": "",
+      "locationType": "default",
+      "uniqueIdType": "unknown",
+      "address": {},
+      "coordinates": {}
+    },
+    "locations": [],
+    "recurrence": null,
+    "attendees": [],
+    "organizer": {
+      "emailAddress": {
+        "name": "Konferenzraum 01",
+        "address": "Konferenzraum01@a-sqa.de"
+      }
+    },
+    "onlineMeeting": null,
+    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
+    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
+  },
+  {
     "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAAS3Yl1Q==\"",
     "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AABLdYkxAAA=",
     "createdDateTime": "2025-01-17T13:54:46.1486948Z",
@@ -959,297 +1099,6 @@
     },
     "onlineMeeting": {
       "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_MmY2YmViODctMjZjMS00NDgyLWI4YzctODIxMWYwNmZiYjdm%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
-    },
-    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
-    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
-  },
-  {
-    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAALwHU1A==\"",
-    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAvAnQDAAA=",
-    "createdDateTime": "2024-12-05T15:44:15.7964968Z",
-    "lastModifiedDateTime": "2024-12-06T06:46:28.4466803Z",
-    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAALwHU1A==",
-    "categories": [],
-    "transactionId": null,
-    "originalStartTimeZone": "W. Europe Standard Time",
-    "originalEndTimeZone": "W. Europe Standard Time",
-    "iCalUId": "040000008200E00074C5B7101A82E00800000000F49E2A802C47DB0100000000000000001000000067E3A3E169F78F49BD6AA370E5086E4F",
-    "uid": "040000008200E00074C5B7101A82E00800000000F49E2A802C47DB0100000000000000001000000067E3A3E169F78F49BD6AA370E5086E4F",
-    "reminderMinutesBeforeStart": 15,
-    "isReminderOn": false,
-    "hasAttachments": false,
-    "subject": "Entwicklungsgespräch Rick<>Alex [Persönlich]",
-    "bodyPreview": "",
-    "importance": "normal",
-    "sensitivity": "normal",
-    "isAllDay": false,
-    "isCancelled": false,
-    "isOrganizer": false,
-    "responseRequested": true,
-    "seriesMasterId": null,
-    "showAs": "busy",
-    "type": "singleInstance",
-    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAvAnQDAAA%3D&exvsurl=1&path=/calendar/item",
-    "onlineMeetingUrl": null,
-    "isOnlineMeeting": false,
-    "onlineMeetingProvider": "unknown",
-    "allowNewTimeProposals": true,
-    "occurrenceId": null,
-    "isDraft": false,
-    "hideAttendees": false,
-    "responseStatus": {
-      "response": "accepted",
-      "time": "2024-12-05T15:44:18.0666296Z"
-    },
-    "body": {
-      "contentType": "html",
-      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
-    },
-    "start": {
-      "dateTime": "2025-03-06T08:15:00.0000000",
-      "timeZone": "UTC"
-    },
-    "end": {
-      "dateTime": "2025-03-06T09:00:00.0000000",
-      "timeZone": "UTC"
-    },
-    "location": {
-      "displayName": "Konferenzraum 01",
-      "locationUri": "Konferenzraum01@a-sqa.de",
-      "locationType": "conferenceRoom",
-      "uniqueId": "Konferenzraum01@a-sqa.de",
-      "uniqueIdType": "directory",
-      "address": {
-        "street": "",
-        "city": "",
-        "state": "",
-        "countryOrRegion": "",
-        "postalCode": ""
-      },
-      "coordinates": {}
-    },
-    "locations": [
-      {
-        "displayName": "Konferenzraum 01",
-        "locationUri": "Konferenzraum01@a-sqa.de",
-        "locationType": "conferenceRoom",
-        "uniqueId": "Konferenzraum01@a-sqa.de",
-        "uniqueIdType": "directory",
-        "address": {
-          "street": "",
-          "city": "",
-          "state": "",
-          "countryOrRegion": "",
-          "postalCode": ""
-        },
-        "coordinates": {}
-      }
-    ],
-    "recurrence": null,
-    "attendees": [
-      {
-        "type": "required",
-        "status": {
-          "response": "none",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Alexander Morgner",
-          "address": "a.morgner@a-sqa.de"
-        }
-      },
-      {
-        "type": "required",
-        "status": {
-          "response": "accepted",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Rick Korau",
-          "address": "r.korau@a-sqa.de"
-        }
-      },
-      {
-        "type": "resource",
-        "status": {
-          "response": "accepted",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Konferenzraum 01",
-          "address": "Konferenzraum01@a-sqa.de"
-        }
-      }
-    ],
-    "organizer": {
-      "emailAddress": {
-        "name": "Alexander Morgner",
-        "address": "a.morgner@a-sqa.de"
-      }
-    },
-    "onlineMeeting": null,
-    "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
-    "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
-  },
-  {
-    "@odata.etag": "W/\"nBCHCc+Z3kSKEJgXcWnHvgAASNzNbw==\"",
-    "id": "AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAENAACcEIcJz5neRIoQmBdxace_AAAtF6eVAAA=",
-    "createdDateTime": "2024-12-02T14:30:26.7416201Z",
-    "lastModifiedDateTime": "2025-01-13T08:58:40.0140176Z",
-    "changeKey": "nBCHCc+Z3kSKEJgXcWnHvgAASNzNbw==",
-    "categories": [],
-    "transactionId": null,
-    "originalStartTimeZone": "W. Europe Standard Time",
-    "originalEndTimeZone": "W. Europe Standard Time",
-    "iCalUId": "040000008200E00074C5B7101A82E00807E9010D6FED4019A818DB0100000000000000001000000032845FC8DDF7084C9139809CC325BE39",
-    "uid": "040000008200E00074C5B7101A82E008000000006FED4019A818DB0100000000000000001000000032845FC8DDF7084C9139809CC325BE39",
-    "reminderMinutesBeforeStart": 15,
-    "isReminderOn": false,
-    "hasAttachments": false,
-    "subject": "All-Lotto-Talk",
-    "bodyPreview": "",
-    "importance": "normal",
-    "sensitivity": "normal",
-    "isAllDay": false,
-    "isCancelled": false,
-    "isOrganizer": false,
-    "responseRequested": true,
-    "seriesMasterId": null,
-    "showAs": "busy",
-    "type": "singleInstance",
-    "webLink": "https://outlook.office365.com/owa/?itemid=AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI%2BdjISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace%2BAAAAAAENAACcEIcJz5neRIoQmBdxace%2BAAAtF6eVAAA%3D&exvsurl=1&path=/calendar/item",
-    "onlineMeetingUrl": null,
-    "isOnlineMeeting": true,
-    "onlineMeetingProvider": "teamsForBusiness",
-    "allowNewTimeProposals": true,
-    "occurrenceId": null,
-    "isDraft": false,
-    "hideAttendees": false,
-    "responseStatus": {
-      "response": "accepted",
-      "time": "2025-01-13T08:55:42.7219043Z"
-    },
-    "body": {
-      "contentType": "html",
-      "content": "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<meta name=\"Generator\" content=\"Microsoft Exchange Server\">\r\n<!-- converted from text -->\r\n<style><!-- .EmailQuote { margin-left: 1pt; padding-left: 4pt; border-left: #800000 2px solid; } --></style></head>\r\n<body>\r\n<font size=\"2\"><span style=\"font-size:11pt;\"><div class=\"PlainText\">&nbsp;</div></span></font>\r\n</body>\r\n</html>\r\n"
-    },
-    "start": {
-      "dateTime": "2025-01-20T09:00:00.0000000",
-      "timeZone": "UTC"
-    },
-    "end": {
-      "dateTime": "2025-01-20T10:00:00.0000000",
-      "timeZone": "UTC"
-    },
-    "location": {
-      "displayName": "Konferenzraum 01",
-      "locationUri": "Konferenzraum01@a-sqa.de",
-      "locationType": "conferenceRoom",
-      "uniqueId": "Konferenzraum01@a-sqa.de",
-      "uniqueIdType": "directory",
-      "address": {
-        "street": "",
-        "city": "",
-        "state": "",
-        "countryOrRegion": "",
-        "postalCode": ""
-      },
-      "coordinates": {}
-    },
-    "locations": [
-      {
-        "displayName": "Konferenzraum 01",
-        "locationUri": "Konferenzraum01@a-sqa.de",
-        "locationType": "conferenceRoom",
-        "uniqueId": "Konferenzraum01@a-sqa.de",
-        "uniqueIdType": "directory",
-        "address": {
-          "street": "",
-          "city": "",
-          "state": "",
-          "countryOrRegion": "",
-          "postalCode": ""
-        },
-        "coordinates": {}
-      }
-    ],
-    "recurrence": null,
-    "attendees": [
-      {
-        "type": "required",
-        "status": {
-          "response": "none",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Alexander Morgner",
-          "address": "a.morgner@a-sqa.de"
-        }
-      },
-      {
-        "type": "resource",
-        "status": {
-          "response": "accepted",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Konferenzraum 01",
-          "address": "Konferenzraum01@a-sqa.de"
-        }
-      },
-      {
-        "type": "required",
-        "status": {
-          "response": "notResponded",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Enrico Ausborn",
-          "address": "e.ausborn@a-sqa.de"
-        }
-      },
-      {
-        "type": "required",
-        "status": {
-          "response": "none",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Jessica Balaban",
-          "address": "j.balaban@a-sqa.de"
-        }
-      },
-      {
-        "type": "required",
-        "status": {
-          "response": "accepted",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Abide Dogan",
-          "address": "a.dogan@a-sqa.de"
-        }
-      },
-      {
-        "type": "required",
-        "status": {
-          "response": "none",
-          "time": "0001-01-01T00:00:00Z"
-        },
-        "emailAddress": {
-          "name": "Steve Plath",
-          "address": "s.plath@a-sqa.de"
-        }
-      }
-    ],
-    "organizer": {
-      "emailAddress": {
-        "name": "Alexander Morgner",
-        "address": "a.morgner@a-sqa.de"
-      }
-    },
-    "onlineMeeting": {
-      "joinUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjhhODJiZGQtZjFmYS00ZmUxLWI2NmUtMzJkZThjMjliOTIy%40thread.v2/0?context=%7b%22Tid%22%3a%22d6cc290c-f750-40cc-beed-8ddae67b0c8e%22%2c%22Oid%22%3a%224367778d-c303-48c3-92a8-ec8d8dae30c3%22%7d"
     },
     "calendar@odata.associationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')/$ref",
     "calendar@odata.navigationLink": "https://graph.microsoft.com/v1.0/users('0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c')/calendars('AAMkADZiMzA3ZDgyLWI0NTUtNDAxOS1hMDdiLWZhMjAxNjJkOTFkZABGAAAAAADIBtfI_djISYvVYSjz7i0bBwCcEIcJz5neRIoQmBdxace_AAAAAAEGAACcEIcJz5neRIoQmBdxace_AAAAANa2AAA=')"
