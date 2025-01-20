@@ -29,7 +29,7 @@ Sofern die .env Datei korrekt hinterlegt ist, authorisiert das Tool derzeit "Kon
 ```bash
 ./backend
 ```
-steht. 
+steht.   
 3. Installiere die folgenden nodes mit dem jeweiligen Bashbefehl
 
 ### dotenv
