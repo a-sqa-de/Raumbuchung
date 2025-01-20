@@ -23,20 +23,32 @@ Sofern die .env Datei korrekt hinterlegt ist, authorisiert das Tool derzeit "Kon
 - - Bereits belegte Zeitslots werden farblich gekennzeichnet
 - Lokal ausführbar - dank HTML!
 
-## benötigte Nodes
-Die folgenden nodes, sowie die passende .env, müssen im Ordner "Backend" installiert bzw. hinterlegt werden.
+## Installation
+1. Es ist notwendig, dass das System "nodes" verarbeiten kann. Bitte erkundige dich wie du diese installierst, da die Installation dafür nach Betriebssystem variiert.
+2. Die folgenden nodes müssen im Ordner "Backend" installiert bzw. hinterlegt werden. Navigiere hierzu in das passende Unterverzeichnis des Projektes, bis am Ende
+```bash
+./backend
+```
+steht.   
+3. Installiere die folgenden nodes mit dem jeweiligen Bashbefehl
 
 ### dotenv
-- npm install dotenv
-- - wird benötigt, um sensible Daten geheim zu halten und nicht versehentlich auf GitHiub zu posten. 
+```bash
+npm install dotenv
+```
+Anmerkung: Wird benötigt, da das Projekt mit einer.env Datei arbeitet. Diese bleibt anschließend "geheim" und wird nicht mit GitHub synchronisiert. Mehr dazu in einem späteren Schrit.
 
-### ws 
-- npm install ws        
-Wird benötigt, um einen lokalen Server bzw. den WebSocket zu starten. 
+### ws
+```bash
+npm install ws 
+```     
+Anmerkung: Wird benötigt, um einen lokalen Server bzw. den WebSocket zu starten. Dieser wird benötigt, um "POST" und "GET" Befehle an MS Graph zu kommunizieren. Außerdem ermöglicht es die "buchungen.json" zu verändern bzw. zu überschreiben.
 
 ### axios
-- npm install axios
-Wird für die POST und GET Anfragen an MS Graph benötigt.
+```bash
+npm install axios 
+```
+Anmerkung: Wird für die POST und GET Anfragen an MS Graph benötigt. Ohne diese Bibliopthek können die entsprechenden Befehle nicht verarbeitet oder geändert werden.
 
 
 ## Fixed
