@@ -1,6 +1,6 @@
 # Raumbuchung
 Eine kleine Webandwendung zum Buchen von Konferenzräumen, welche über einen WebSocket funktioniert.     
-Sofern die .env Datei korrekt hinterlegt ist, authorisiert das Tool derzeit "Konferenzraum01" nach dem starten des WebSockets voll automatisch und holt sich den passenden Token ab. Dieser wird automatisiert an MS Graph weitergeleitet um die Kalenderdaten des Raums auszulesen und in der "buchungen.json" abspeichert.
+Sofern die .env Datei korrekt hinterlegt ist, authorisiert das Tool derzeit "Konferenzraum01" nach dem starten des WebSockets voll automatisch und holt sich den passenden Token ab. Dieser wird automatisiert an MS Graph weitergeleitet um die Kalenderdaten des Raums auszulesen und in der "bookings.json" abspeichert.
 
 ## Features
 - GUI für schnellen Überblick über Raumbuchungen
