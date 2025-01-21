@@ -61,6 +61,7 @@ Aktuell muss man noch auf den Link klicken
 - Aktuelles Meeting wird derzeit fehlerhaft dargestellt 
 Container wurden durch Änderungen falsch deklariert
 - Dashboard zeigt UTC Zeit statt MEZ/MESZ an
+- Countdown rechnet weiter mit UTC
 
 
 ### Bekannte Fehler

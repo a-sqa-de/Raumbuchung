@@ -48,31 +48,31 @@ function getDayDisplay(dateStr) {
 
 // Funktion: Countdown-Update
 function updateCountdown(nextEventStartTime) {
-  const now = new Date();
-  const nextEventTime = new Date(nextEventStartTime);
+  const now = new Date(); // Lokale aktuelle Zeit
+  const nextEventTime = convertToBerlinTime(nextEventStartTime); // UTC -> Berliner Zeit umrechnen
   nextEventTime.setMinutes(nextEventTime.getMinutes() + 1);
-  const currentTimeContainer = document.querySelector("#current-time");
 
+  const currentTimeContainer = document.querySelector("#current-time");
   if (!currentTimeContainer) return;
 
+  // Berechnung der Zeitdifferenz
   const timeDifference = nextEventTime - now;
 
   if (timeDifference > 0) {
     const totalSeconds = Math.floor(timeDifference / 1000);
     const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
     const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-    const seconds = String(totalSeconds % 60).padStart(2, "0");
 
     currentTimeContainer.textContent = `Nächstes Meeting in: ${hours} Stunden & ${minutes} Minuten`;
   } else {
-    currentTimeContainer.textContent = "";
+    currentTimeContainer.textContent = "Das Meeting hat begonnen!";
   }
 }
 
 // Funktion: Events aktualisieren
 async function updateMeetings() {
   try {
-    const response = await fetch("buchungen.json");
+    const response = await fetch("bookings.json");
     if (!response.ok) {
       throw new Error("Fehler beim Laden der JSON-Daten");
     }
@@ -155,7 +155,7 @@ async function updateMeetings() {
       <div><strong>${truncateTitle(event.subject)}</strong></div>
       <div>${event.organizer.emailAddress.name}</div>
       <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
-      <div>${attendeeList}</div>
+      <div class:"teilnehmer">${attendeeList}</div>
       `;
 
       futureEventsContainer.appendChild(card);

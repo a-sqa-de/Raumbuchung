@@ -164,7 +164,7 @@ function createInputField(labelText, id, placeholder = "", readonly = false) {
 
 async function loadAvailableTimes(container, startInput, endInput) {
   try {
-    const response = await fetch("buchungen.json");
+    const response = await fetch("bookings.json");
     if (!response.ok) throw new Error("Fehler beim Laden der Buchungen");
 
     const bookings = await response.json();

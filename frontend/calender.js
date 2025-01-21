@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadAndDisplayMeetings() {
     try {
-      const response = await fetch("buchungen.json");
+      const response = await fetch("bookings.json");
       if (!response.ok) {
         throw new Error("Fehler beim Laden der JSON-Daten");
       }

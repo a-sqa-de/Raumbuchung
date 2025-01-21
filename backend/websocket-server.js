@@ -113,7 +113,7 @@ const saveCalendarData = async () => {
       end: { ...event.end, dateTime: timeZoneBerlin(event.end.dateTime) },
     }));
 
-    const filePath = path.join(__dirname, '../Frontend/buchungen.json');
+    const filePath = path.join(__dirname, '../Frontend/bookings.json');
     fs.writeFileSync(filePath, JSON.stringify(adjustedEvents, null, 2));
     console.log('Kalenderdaten erfolgreich gespeichert.');
   } catch (error) {
@@ -127,7 +127,7 @@ wss.on('connection', ws => {
   console.log('Neuer Client verbunden.');
 
   // Initialdaten beim Verbinden senden
-  const filePath = path.join(__dirname, '../Frontend/buchungen.json');
+  const filePath = path.join(__dirname, '../Frontend/bookings.json');
   if (fs.existsSync(filePath)) {
     const initialData = fs.readFileSync(filePath, 'utf-8');
     ws.send(JSON.stringify({ type: 'initial', data: JSON.parse(initialData) }));
@@ -203,7 +203,7 @@ wss.on('connection', ws => {
 });
 
 // Kalenderdaten alle 2 Minuten abrufen und speichern
-setInterval(saveCalendarData, 2 * 60 * 1000);
+setInterval(saveCalendarData, 1 * 60 * 1000);
 
 // Beim Start einmal Daten abrufen und speichern
 saveCalendarData();
