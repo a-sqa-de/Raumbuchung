@@ -1,7 +1,26 @@
-// Funktion: Zeitformat anpassen (HH:MM)
+// Funktion: UTC-Zeit in Berliner Zeit (MEZ/MESZ) umrechnen
+function convertToBerlinTime(utcTime) {
+  const date = new Date(utcTime);
+
+  // Prüfen, ob das aktuelle Datum Sommer- oder Winterzeit hat
+  const isSummerTime = new Date().getTimezoneOffset() === -120; // -120 Minuten für MESZ aka Mitteleuropäische Sommerzeit Zone
+  const berlinSummerS = isSummerTime ? 2 : 1; // Sommerzeit (+2 UTC) oder Winterzeit (+1 UTC) 
+  
+  // Stunden-Offset anwenden
+  date.setHours(date.getHours() + berlinSummerS);
+
+  return date;
+}
+
+// Angepasste formatTime-Funktion, die die Umrechnung nutzt
 function formatTime(dateStr) {
-  const date = new Date(dateStr);
-  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const berlinTime = convertToBerlinTime(dateStr); // UTC in Berliner Zeit umrechnen
+
+  // Formatierte lokale Zeit im HH:MM-Format zurückgeben
+  const hours = String(berlinTime.getHours()).padStart(2, "0");
+  const minutes = String(berlinTime.getMinutes()).padStart(2, "0");
+
+  return `${hours}:${minutes}`;
 }
 
 // Funktion: Unterschied in Tagen berechnen
@@ -78,10 +97,10 @@ async function updateMeetings() {
         truncateTitle(currentEvent.subject);
       currentEventContainer.querySelector("#current-organizer").textContent =
         `${currentEvent.organizer.emailAddress.name}`;
-      currentEventContainer.querySelector("#current-time").textContent = `${formatTime(
-        currentEvent.start.dateTime
-      )} - ${formatTime(currentEvent.end.dateTime)}`;
-
+        currentEventContainer.querySelector("#current-time").textContent = `${formatTime(
+          currentEvent.start.dateTime
+        )} - ${formatTime(currentEvent.end.dateTime)}`;
+        
       // Teilnehmerliste für aktuelles Ereignis
       const currentAttendees = createAttendeeList(currentEvent.attendees);
       let attendeesContainer = currentEventContainer.querySelector("#current-attendees");
@@ -125,18 +144,18 @@ async function updateMeetings() {
       const cardWidth = 100 - index * 10;
       card.style.width = `${cardWidth - 30}%`;
       card.style.height = `${cardWidth + 5}%`;
-      card.style.margin = "10px auto";
+      card.style.margin = "12px auto";
 
       const dayDisplay = getDayDisplay(event.start.dateTime);
 
       const attendeeList = createAttendeeList(event.attendees);
 
       card.innerHTML = `
-        <div>${dayDisplay}</div>
-        <div><strong>${truncateTitle(event.subject)}</strong></div>
-        <div>${event.organizer.emailAddress.name}</div>
-        <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
-        <div>${attendeeList}</div>
+      <div>${dayDisplay}</div>
+      <div><strong>${truncateTitle(event.subject)}</strong></div>
+      <div>${event.organizer.emailAddress.name}</div>
+      <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
+      <div>${attendeeList}</div>
       `;
 
       futureEventsContainer.appendChild(card);
@@ -148,7 +167,7 @@ async function updateMeetings() {
 
 // Funktion: Titel abkürzen
 function truncateTitle(title) {
-  return title.length > 55 ? `${title.substring(0, 52)}...` : title;
+  return title.length > 47 ? `${title.substring(0, 43)}...` : title;
 }
 
 // Funktion: Teilnehmerliste erstellen

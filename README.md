@@ -54,11 +54,13 @@ Anmerkung: Wird für die POST und GET Anfragen an MS Graph benötigt. Ohne diese
 ## Fixed
 
 ### GUI
-- Die Buttons "Raum buchen" und Terminansicht" sind noch keine richtigen Button.
+- Die Buttons "Raum buchen" und Terminansicht" sind noch keine richtigen Button.    
 Aktuell muss man noch auf den Link klicken
-- Lokalisierung vom Framework "FullCalender" funktioniert nicht
+- Lokalisierung vom Framework "FullCalender" funktioniert nicht 
 "today" heißt nicht "heute"
-- Aktuelles Meeting wird derzeit fehlerhaft dargestellt
+- Aktuelles Meeting wird derzeit fehlerhaft dargestellt 
+Container wurden durch Änderungen falsch deklariert
+- Dashboard zeigt UTC Zeit statt MEZ/MESZ an
 
 
 ### Bekannte Fehler
@@ -66,4 +68,3 @@ Aktuell muss man noch auf den Link klicken
 ## GUI
 - Formular passt sich "Landscape"-Ansicht noch nicht an
 - Inputfield "Organisator/-in" noch ohne Funktion
-- - Dashboard zeigt UTC Zeit an statt berliner Zeit
