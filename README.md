@@ -62,10 +62,15 @@ Aktuell muss man noch auf den Link klicken
 Container wurden durch Änderungen falsch deklariert
 - Dashboard zeigt UTC Zeit statt MEZ/MESZ an
 - Countdown rechnet weiter mit UTC
+- Inputfield "Organisator/-in" noch ohne Funktion   
+Umbenannt in Teilnehmer, welche nun angelegt werden können  
+sofern im Code die Firmenadresse hinterlegt wird, kann man Teilnehmer als mit entsprechender Namenkürzel einladen (vermutlich)
 
 
 ### Bekannte Fehler
 
 ## GUI
 - Formular passt sich "Landscape"-Ansicht noch nicht an
-- Inputfield "Organisator/-in" noch ohne Funktion
+- Zeitdifferenzen zwischen ANwendung und Outlook    
+Anscheinend verwendet Outlook in der Winterzeit weiterhin das UTC+2 Format, wärend die Anwendung +1 verwendet....
+

@@ -18,51 +18,77 @@ const wss = new WebSocket.Server({ port: PORT }, () => {
 
 // Funktion zum Erstellen eines Termins in Microsoft Graph
 const createEventInGraph = async (eventData) => {
-  try {
-    const token = await getAccessToken(); // Zugriffstoken abrufen
+  const token = await getAccessToken();
+  if (!token) throw new Error("Token fehlt.");
 
-    console.log('Daten an Graph API:', {
-      title: eventData.title,
-      start: eventData.start,
-      end: eventData.end,
-      organizer: eventData.organizer,
-      date: eventData.date,
-    });
+  const payload = {
+    subject: eventData.title,
+    start: {
+      dateTime: eventData.start, // Lokale Zeit im ISO 8601-Format
+      timeZone: "W. Europe Standard Time", // Aktuelle Zeitzone
+    },
+    end: {
+      dateTime: eventData.end, // Lokale Zeit im ISO 8601-Format
+      timeZone: "W. Europe Standard Time", // Aktuelle Zeitzone
+    },
+    originalStartTimeZone: "W. Europe Standard Time", // Original-Zeitzone
+    originalEndTimeZone: "W. Europe Standard Time",   // Original-Zeitzone
+    attendees: eventData.attendees || [],
+    body: {
+      contentType: "HTML",
+      content: "Event erstellt mit Originalzeit in W. Europe Standard Time.",
+    },
+    allowNewTimeProposals: true,
+  };
 
-    const response = await axios.post(
-      GRAPH_API_ENDPOINT,
-      {
-        subject: eventData.title,
-        start: {
-          dateTime: eventData.start,
-          timeZone: 'UTC',
-        },
-        end: {
-          dateTime: eventData.end,
-          timeZone: 'UTC',
-        },
-        body: {
-          contentType: 'HTML',
-          content: `Organisator: ${eventData.organizer}<br>Datum: ${eventData.date}`,
-        },
-        isOrganizer: false, // Setze isOrganizer auf false
-        sensitivity: 'normal', // Setze sensitivity auf normal
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+  const response = await axios.post(GRAPH_API_ENDPOINT, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
 
-    console.log('Termin erfolgreich in Microsoft Graph erstellt:', response.data);
-    return response.data;
-  } catch (error) {
-    console.error('Fehler beim Erstellen des Termins:', error.response?.data || error.message);
-    throw error;
-  }
+  return response.data;
 };
+
+wss.on("connection", (ws) => {
+  console.log("Neuer Client verbunden.");
+
+  ws.on("message", async (message) => {
+    try {
+      const parsedMessage = JSON.parse(message);
+
+      if (parsedMessage.type === "create-event") {
+        const eventData = parsedMessage.data;
+
+        if (!eventData.start || !eventData.end) {
+          ws.send(JSON.stringify({ type: "error", message: "Start- oder Endzeit fehlt." }));
+          return;
+        }
+
+        const createdEvent = await createEventInGraph(eventData);
+
+        // Sende nur einmal eine Erfolgsmeldung zurück
+        ws.send(JSON.stringify({ type: "event-created", data: createdEvent }));
+      } else {
+        ws.send(JSON.stringify({ type: "error", message: "Unbekannter Nachrichtentyp." }));
+      }
+    } catch (error) {
+      ws.send(
+        JSON.stringify({
+          type: "error",
+          message: error.response?.data?.error?.message || error.message || "Fehler beim Erstellen des Events.",
+        })
+      );
+    }
+  });
+
+  ws.on("close", () => {
+    console.log("Client hat die Verbindung geschlossen.");
+  });
+});
+
+
 
 // Funktion zum Abrufen von Kalenderdaten aus Microsoft Graph
 const fetchCalendarData = async () => {
