@@ -1,45 +1,64 @@
-// WebSocket-Verbindung herstellen
-const ws = new WebSocket('ws://localhost:5500');
-console.log('WebSocket initialisiert:', ws);
+// WebSocket-Variable global initialisieren
+let ws;
 
-ws.onopen = () => {
-  console.log('WebSocket-Verbindung hergestellt');
-};
-
-ws.onmessage = (event) => {
-  const message = JSON.parse(event.data);
-
-  if (message.type === 'event-created') {
-    alert('Termin erfolgreich erstellt');
-  } else if (message.type === 'error') {
-    alert(`Fehler: ${message.message}`);
-  } else {
-    console.log('Unbekannte Nachricht vom Server:', message);
+function initializeWebSocket() {
+  if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
+    console.log("WebSocket ist bereits verbunden oder wird verbunden.");
+    return;
   }
-};
 
-ws.onerror = (error) => {
-  console.error('WebSocket-Fehler:', error);
-};
+  ws = new WebSocket('ws://localhost:5500');
+  console.log('WebSocket initialisiert:', ws);
 
-ws.onclose = () => {
-  console.log('WebSocket-Verbindung geschlossen');
-};
+  ws.onopen = () => {
+    console.log('WebSocket-Verbindung hergestellt');
+  };
 
-// Erstellt das Formular
+  ws.onmessage = (event) => {
+    const message = JSON.parse(event.data);
+
+    if (message.type === 'event-created') {
+      alert('Termin erfolgreich erstellt');
+    } else if (message.type === 'error') {
+      alert(`Fehler: ${message.message}`);
+    } else if (message.type === 'initial') {
+      console.log('Initialdaten empfangen:', message.data);
+    } else {
+      console.log('Unbekannte Nachricht vom Server:', message);
+    }
+  };
+
+  ws.onerror = (error) => {
+    console.error('WebSocket-Fehler:', error);
+  };
+
+  ws.onclose = () => {
+    console.log('WebSocket-Verbindung geschlossen');
+  };
+}
+
 function createForm() {
+  console.log("createForm aufgerufen");
+
   const formContainer = document.getElementById("form-container");
+
+  if (!formContainer) {
+    console.error("Formular-Container fehlt.");
+    return;
+  }
+
+  // Verhindern, dass mehrfach das Formular erstellt wird
+  if (formContainer.querySelector(".booking-form")) {
+    console.warn("Formular bereits erstellt, überspringe Erstellung.");
+    return;
+  }
 
   // Formular erstellen
   const form = document.createElement("form");
   form.className = "booking-form";
 
   // Titel-Feld
-  const titleField = createInputField(
-    "Titel", 
-    "titel", 
-    "Wie heißt dein Event?"
-  );
+  const titleField = createInputField("Titel", "titel", "Wie heißt dein Event?");
   form.appendChild(titleField);
 
   // Teilnehmer-Feld
@@ -95,37 +114,43 @@ function createForm() {
   // Formular-Submit
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-  
+
     const title = document.getElementById("titel").value;
     const rawAttendees = document.getElementById("attendees").value;
     const startTime = document.getElementById("selected-start-time").value;
     const endTime = document.getElementById("selected-end-time").value;
-  
-    if (!title || !startTime || !endTime) return;
-  
+
+    if (!title || !startTime || !endTime) {
+      alert("Bitte alle Felder ausfüllen!");
+      return;
+    }
+
     const today = new Date().toISOString().split("T")[0];
     const startDateTime = `${today}T${startTime}:00`;
     const endDateTime = `${today}T${endTime}:00`;
-  
+
     const attendees = rawAttendees.split(",").map((name) => ({
       type: "required",
       emailAddress: {
         name: name.trim(),
-        address: `${name.trim().replace(/\s+/g, ".").toLowerCase()}@example.com`,
+        address: `${name.trim().replace(/\s+/g, ".").toLowerCase()}@a-sqa.de`,
       },
     }));
-  
+
     const eventData = {
       title,
       start: startDateTime,
       end: endDateTime,
       attendees,
     };
-  
+
     if (ws.readyState === WebSocket.OPEN) {
+      console.log("Daten an WebSocket:", eventData);
       ws.send(JSON.stringify({ type: "create-event", data: eventData }));
+    } else {
+      alert("WebSocket-Verbindung nicht offen. Bitte erneut versuchen.");
     }
-  });  
+  });
 }
 
 // Hilfsfunktion zum Erstellen eines Eingabefelds
@@ -142,7 +167,6 @@ function createInputField(labelText, id, placeholder = "", readonly = false) {
   input.id = id;
   input.name = id;
   input.placeholder = placeholder;
-  input.required = !readonly;
   input.readOnly = readonly;
 
   fieldContainer.appendChild(label);
@@ -175,6 +199,11 @@ async function loadAvailableTimes(container, startInput, endInput) {
       const isBlocked = bookings.some((booking) => {
         const bookingStart = new Date(booking.start.dateTime);
         const bookingEnd = new Date(booking.end.dateTime);
+
+        // Künstlich um 1 Stunde nach hinten versetzen
+        bookingStart.setHours(bookingStart.getHours() + 1);
+        bookingEnd.setHours(bookingEnd.getHours() + 1);
+
         return currentTime >= bookingStart && currentTime < bookingEnd;
       });
 
@@ -187,51 +216,48 @@ async function loadAvailableTimes(container, startInput, endInput) {
       card.className = "time-card";
       if (isBlocked) card.classList.add("blocked");
       card.textContent = timeString;
-    
+
       card.addEventListener("click", () => {
         if (isBlocked) {
           alert("Diese Zeit ist bereits belegt.");
           return;
         }
-    
+
         if (card.classList.contains("selected")) {
-          // Deaktiviere die Zeit
           card.classList.remove("selected");
-    
-          if (startInput.value === timeString) {
-            startInput.value = ""; // Entferne die Startzeit
-          } else if (endInput.value === timeString) {
-            endInput.value = ""; // Entferne die Endzeit
-          }
+          if (startInput.value === timeString) startInput.value = "";
+          if (endInput.value === timeString) endInput.value = "";
         } else {
           if (!startInput.value) {
-            // Setze Startzeit
             startInput.value = timeString;
             card.classList.add("selected");
           } else if (!endInput.value) {
-            const selectedStart = availableTimes.find((t) => t.timeString === startInput.value).currentTime;
-    
+            const selectedStart = new Date(
+              availableTimes.find((t) => t.timeString === startInput.value).currentTime
+            );
+
             if (currentTime <= selectedStart) {
               alert("Die Endzeit muss nach der Startzeit liegen!");
               return;
             }
-    
-            // Setze Endzeit
+
             endInput.value = timeString;
             card.classList.add("selected");
           } else {
-            alert("Start- und Endzeit sind bereits gesetzt. Deaktivieren Sie eine Zeit, um eine neue auszuwählen.");
+            alert(
+              "Start- und Endzeit sind bereits gesetzt. Deaktivieren Sie eine Zeit, um eine neue auszuwählen."
+            );
           }
         }
       });
-    
+
       container.appendChild(card);
     });
-    
   } catch (error) {
     console.error("Fehler beim Laden der verfügbaren Zeiten:", error);
   }
 }
 
-// Formular erstellen
+// Initialisierungen
+initializeWebSocket();
 createForm();

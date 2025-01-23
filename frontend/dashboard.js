@@ -1,20 +1,20 @@
 // Funktion: UTC-Zeit in Berliner Zeit (MEZ/MESZ) umrechnen
-function convertToBerlinTime(utcTime) {
+function convertToBerlinTimeZone(utcTime) {
   const date = new Date(utcTime);
 
-  // Prüfen, ob das aktuelle Datum Sommer- oder Winterzeit hat
-  const isSummerTime = new Date().getTimezoneOffset() === -120; // -120 Minuten für MESZ aka Mitteleuropäische Sommerzeit Zone
-  const berlinSummerS = isSummerTime ? 2 : 1; // Sommerzeit (+2 UTC) oder Winterzeit (+1 UTC) 
-  
+  // Sommer- oder Winterzeit basierend auf dem übergebenen Datum prüfen
+  const isSummerTime = date.getTimezoneOffset() === -120; // -120 Minuten für Sommerzeit
+  const berlinOffset = isSummerTime ? 2 : 1; // Sommerzeit (+2 UTC) oder Winterzeit (+1 UTC)
+
   // Stunden-Offset anwenden
-  date.setHours(date.getHours() + berlinSummerS);
+  date.setHours(date.getHours() + berlinOffset);
 
   return date;
 }
 
 // Angepasste formatTime-Funktion, die die Umrechnung nutzt
 function formatTime(dateStr) {
-  const berlinTime = convertToBerlinTime(dateStr); // UTC in Berliner Zeit umrechnen
+  const berlinTime = convertToBerlinTimeZone(dateStr); // UTC in Berliner Zeit umrechnen
 
   // Formatierte lokale Zeit im HH:MM-Format zurückgeben
   const hours = String(berlinTime.getHours()).padStart(2, "0");
@@ -49,7 +49,7 @@ function getDayDisplay(dateStr) {
 // Funktion: Countdown-Update
 function updateCountdown(nextEventStartTime) {
   const now = new Date(); // Lokale aktuelle Zeit
-  const nextEventTime = convertToBerlinTime(nextEventStartTime); // UTC -> Berliner Zeit umrechnen
+  const nextEventTime = convertToBerlinTimeZone(nextEventStartTime); // UTC -> Berliner Zeit umrechnen
   nextEventTime.setMinutes(nextEventTime.getMinutes() + 1);
 
   const currentTimeContainer = document.querySelector("#current-time");
@@ -80,13 +80,25 @@ async function updateMeetings() {
     const bookings = await response.json();
     const now = new Date();
 
+    // Hilfsfunktion: Künstlich +1 Stunde für Berechnungen hinzufügen
+    const addArtificialOffset = (utcTime) => {
+      const date = new Date(utcTime);
+      date.setHours(date.getHours() + 1); // +1 Stunde für die Berechnung
+      return date;
+    };
+
     const currentEvent = bookings.find(
-      (booking) => new Date(booking.start.dateTime) <= now && new Date(booking.end.dateTime) > now
+      (booking) =>
+        addArtificialOffset(booking.start.dateTime) <= now &&
+        addArtificialOffset(booking.end.dateTime) > now
     );
 
     const futureEvents = bookings
-      .filter((booking) => new Date(booking.start.dateTime) > now)
-      .sort((a, b) => new Date(a.start.dateTime) - new Date(b.start.dateTime));
+      .filter((booking) => addArtificialOffset(booking.start.dateTime) > now)
+      .sort(
+        (a, b) =>
+          addArtificialOffset(a.start.dateTime) - addArtificialOffset(b.start.dateTime)
+      );
 
     const currentEventContainer = document.getElementById("current-meeting");
     const futureEventsContainer = document.getElementById("future-meetings");
@@ -97,10 +109,10 @@ async function updateMeetings() {
         truncateTitle(currentEvent.subject);
       currentEventContainer.querySelector("#current-organizer").textContent =
         `${currentEvent.organizer.emailAddress.name}`;
-        currentEventContainer.querySelector("#current-time").textContent = `${formatTime(
-          currentEvent.start.dateTime
-        )} - ${formatTime(currentEvent.end.dateTime)}`;
-        
+      currentEventContainer.querySelector("#current-time").textContent = `${formatTime(
+        currentEvent.start.dateTime
+      )} - ${formatTime(currentEvent.end.dateTime)}`;
+
       // Teilnehmerliste für aktuelles Ereignis
       const currentAttendees = createAttendeeList(currentEvent.attendees);
       let attendeesContainer = currentEventContainer.querySelector("#current-attendees");
@@ -121,7 +133,7 @@ async function updateMeetings() {
 
       if (futureEvents.length > 0) {
         const nextEvent = futureEvents[0];
-        const nextEventStartTime = nextEvent.start.dateTime;
+        const nextEventStartTime = new Date(nextEvent.start.dateTime);
 
         updateCountdown(nextEventStartTime);
         setInterval(() => updateCountdown(nextEventStartTime), 60000);
