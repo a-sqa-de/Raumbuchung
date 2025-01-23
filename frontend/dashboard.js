@@ -63,7 +63,7 @@ function updateCountdown(nextEventStartTime) {
     const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
     const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
 
-    currentTimeContainer.textContent = `Nächstes Meeting in: ${hours} Stunden & ${minutes} Minuten`;
+    currentTimeContainer.textContent = `Nächstes Meeting in ${hours} Stunden <b>:</b> ${minutes} Minuten`;
   } else {
     currentTimeContainer.textContent = "Das Meeting hat begonnen!";
   }

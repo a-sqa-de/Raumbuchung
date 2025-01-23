@@ -65,7 +65,7 @@ function createForm() {
   const attendeesField = createInputField(
     "Teilnehmer",
     "attendees",
-    "Trage die Teilnehmernamen ein, getrennt durch ein Komma"
+    "z.B. m.mustermann, m mustermann usw."
   );
   form.appendChild(attendeesField);
 
