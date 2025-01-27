@@ -148,6 +148,12 @@ function createForm() {
       },
     }));
 
+    // zur Validierung: Mindestens ein Teilnehmer muss vorhanden sein
+    if (attendees.length === 0) {
+      alert("Bitte mindestens einen gültigen Teilnehmer eingeben.");
+      return;
+    }
+
     const eventData = {
       title,
       start: startDateTime,
@@ -192,14 +198,17 @@ async function loadAvailableTimes(container, startInput, endInput) {
     if (!response.ok) throw new Error("Fehler beim Laden der Buchungen");
 
     const bookings = await response.json();
+    console.log("Loaded bookings:", bookings);
+
     const now = new Date();
-    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0);
+    now.setMinutes(Math.ceil(now.getMinutes() / 15) * 15, 0, 0); // Auf die nächsten 15 Minuten runden
     const endOfDay = new Date();
     endOfDay.setHours(18, 0, 0, 0);
 
-    container.innerHTML = ""; // Vorherigen Inhalt löschen
+    container.innerHTML = "";
 
     const availableTimes = [];
+
     while (now <= endOfDay) {
       const timeString = `${now.getHours().toString().padStart(2, "0")}:${now
         .getMinutes()
@@ -207,16 +216,23 @@ async function loadAvailableTimes(container, startInput, endInput) {
         .padStart(2, "0")}`;
       const currentTime = new Date(now);
 
+      // Prüfen, ob der Slot blockiert ist
       const isBlocked = bookings.some((booking) => {
+        // Start- und Endzeiten um eine Stunde nach vorne verschieben
         const bookingStart = new Date(booking.start.dateTime);
+        bookingStart.setHours(bookingStart.getHours() + 1);
         const bookingEnd = new Date(booking.end.dateTime);
+        bookingEnd.setHours(bookingEnd.getHours() + 1);
+
+        // Zeitüberschneidung prüfen
         return currentTime >= bookingStart && currentTime < bookingEnd;
       });
 
       availableTimes.push({ timeString, currentTime, isBlocked });
-      now.setMinutes(now.getMinutes() + 15);
+      now.setMinutes(now.getMinutes() + 15); // Nächsten Zeitslot um 15 Minuten erhöhen
     }
 
+    // Zeitslots anzeigen
     availableTimes.forEach(({ timeString, currentTime, isBlocked }) => {
       const card = document.createElement("div");
       card.className = "time-card";
@@ -225,7 +241,7 @@ async function loadAvailableTimes(container, startInput, endInput) {
 
       card.addEventListener("click", () => {
         if (isBlocked) {
-          alert("Diese Zeit ist bereits belegt.");
+          alert("Diese Zeit ist bereits belegt und kann nicht ausgewählt werden.");
           return;
         }
 
@@ -235,29 +251,37 @@ async function loadAvailableTimes(container, startInput, endInput) {
           if (endInput.value === timeString) endInput.value = "";
         } else {
           if (!startInput.value) {
+            // Startzeit setzen
             startInput.value = timeString;
             card.classList.add("selected");
           } else if (!endInput.value) {
+            // Endzeit setzen und prüfen
             const selectedStart = availableTimes.find(
               (t) => t.timeString === startInput.value
             ).currentTime;
 
-            const isConflict = bookings.some((booking) => {
+            const selectedEnd = currentTime;
+
+            // Zusätzliche Prüfung: Start- und Endpunkt dürfen keine Buchung überschreiten
+            const crossesBooking = bookings.some((booking) => {
               const bookingStart = new Date(booking.start.dateTime);
+              bookingStart.setHours(bookingStart.getHours() + 1);
               const bookingEnd = new Date(booking.end.dateTime);
+              bookingEnd.setHours(bookingEnd.getHours() + 1);
+
               return (
-                currentTime > selectedStart &&
-                (currentTime >= bookingStart && currentTime < bookingEnd)
+                (selectedStart < bookingStart && selectedEnd > bookingStart) || // Start vor Buchung, Endpunkt überschneidet
+                (selectedStart < bookingEnd && selectedEnd > bookingEnd)       // Endpunkt nach Buchung, Startpunkt überschneidet
               );
             });
 
-            if (currentTime <= selectedStart) {
+            if (selectedEnd <= selectedStart) {
               alert("Die Endzeit muss nach der Startzeit liegen!");
               return;
             }
 
-            if (isConflict) {
-              alert("Die ausgewählte Endzeit kollidiert mit bestehenden Terminen!");
+            if (crossesBooking) {
+              alert("Der ausgewählte Zeitraum überschneidet eine bestehende Buchung!");
               return;
             }
 
@@ -271,12 +295,13 @@ async function loadAvailableTimes(container, startInput, endInput) {
         }
       });
 
-      container.appendChild(card);
+      container.appendChild(card); // Zeitslot hinzufügen
     });
   } catch (error) {
     console.error("Fehler beim Laden der verfügbaren Zeiten:", error);
   }
 }
+
 
 // Initialisierungen
 initializeWebSocket();

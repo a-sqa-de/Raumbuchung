@@ -278,3 +278,7 @@ footer {
   background-color: #e0e0e0; /* Hover-Effekt nur für nicht blockierte Karten */
   transform: scale(1.03);
 }
+
+.bold {
+  font-weight: bold;
+}

@@ -63,7 +63,7 @@ function updateCountdown(nextEventStartTime) {
     const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
     const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
 
-    currentTimeContainer.textContent = `Nächstes Meeting in ${hours} Stunden <b>:</b> ${minutes} Minuten`;
+    currentTimeContainer.innerHTML = `Nächstes Meeting in ${hours} Stunden <span class="bold">:</span> ${minutes} Minuten`;
   } else {
     currentTimeContainer.textContent = "Das Meeting hat begonnen!";
   }
@@ -129,6 +129,11 @@ async function updateMeetings() {
     } else {
       currentEventContainer.querySelector("#current-title").textContent = "Aktuell kein Meeting";
       currentEventContainer.querySelector("#current-time").textContent = "";
+      currentEventContainer.querySelector("#current-organizer").textContent = "";
+
+      const attendeesContainer = currentEventContainer.querySelector("#current-attendees");
+      if (attendeesContainer) attendeesContainer.textContent = "Keine Teilnehmer";
+      
       currentEventContainer.classList.remove("hidden");
 
       if (futureEvents.length > 0) {
