@@ -104,6 +104,23 @@ const fetchCalendarEvents = async () => {
   }
 }
 
+/**
+ * Erstellt Kalenderereignisse in Microsoft Graph
+ */
+const createCalendarEvent = async (eventData) => {
+  const token = await getAccessToken();
+  const response = await axios.post(
+    'https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events',
+    eventData,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+  return response.data;
+};
 
 // Exportiere die Funktion für den Abruf von Kalenderdaten
 module.exports = { getAccessToken, fetchCalendarEvents, createCalendarEvent };

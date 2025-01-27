@@ -159,4 +159,4 @@ wss.on("connection", (ws, req) => {
   });
 });
 
-setInterval(saveCalendarData, 10000)
+setInterval(saveCalendarData, 1 * 60 * 1000) // 5 * 60 Sekunden * 1000 Milkisekunden = 5 Minuten

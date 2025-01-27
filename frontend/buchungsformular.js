@@ -1,5 +1,6 @@
 // WebSocket-Variable global initialisieren
 let ws;
+let isFormInitialized = false; // Status zur Überprüfung, ob das Formular bereits erstellt wurde
 
 function initializeWebSocket() {
   if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
@@ -12,6 +13,10 @@ function initializeWebSocket() {
 
   ws.onopen = () => {
     console.log('WebSocket-Verbindung hergestellt');
+    if (!isFormInitialized) {
+      createForm(); // Formular nur beim ersten Verbindungsaufbau erstellen
+      isFormInitialized = true;
+    }
   };
 
   ws.onmessage = (event) => {
@@ -21,8 +26,12 @@ function initializeWebSocket() {
       alert('Termin erfolgreich erstellt');
     } else if (message.type === 'error') {
       alert(`Fehler: ${message.message}`);
-    } else if (message.type === 'initial') {
-      console.log('Initialdaten empfangen:', message.data);
+    } else if (message.type === 'events-data' || message.type === 'initial') {
+      // Nur den Container "available-times" aktualisieren
+      const availableTimesContainer = document.getElementById("available-times");
+      const startInput = document.getElementById("selected-start-time");
+      const endInput = document.getElementById("selected-end-time");
+      loadAvailableTimes(availableTimesContainer, startInput, endInput);
     } else {
       console.log('Unbekannte Nachricht vom Server:', message);
     }
@@ -34,8 +43,10 @@ function initializeWebSocket() {
 
   ws.onclose = () => {
     console.log('WebSocket-Verbindung geschlossen');
+    isFormInitialized = false; // Bei Verbindungsverlust erlauben, das Formular neu zu initialisieren
   };
 }
+
 
 function createForm() {
   console.log("createForm aufgerufen");
@@ -133,7 +144,7 @@ function createForm() {
       type: "required",
       emailAddress: {
         name: name.trim(),
-        address: `${name.trim().replace(/\s+/g, ".").toLowerCase()}@a-sqa.de`,
+        address: `${name.trim().replace(/\\s+/g, ".").toLowerCase()}@a-sqa.de`,
       },
     }));
 
@@ -199,11 +210,6 @@ async function loadAvailableTimes(container, startInput, endInput) {
       const isBlocked = bookings.some((booking) => {
         const bookingStart = new Date(booking.start.dateTime);
         const bookingEnd = new Date(booking.end.dateTime);
-
-        // Künstlich um 1 Stunde nach hinten versetzen
-        bookingStart.setHours(bookingStart.getHours() + 1);
-        bookingEnd.setHours(bookingEnd.getHours() + 1);
-
         return currentTime >= bookingStart && currentTime < bookingEnd;
       });
 
@@ -232,12 +238,26 @@ async function loadAvailableTimes(container, startInput, endInput) {
             startInput.value = timeString;
             card.classList.add("selected");
           } else if (!endInput.value) {
-            const selectedStart = new Date(
-              availableTimes.find((t) => t.timeString === startInput.value).currentTime
-            );
+            const selectedStart = availableTimes.find(
+              (t) => t.timeString === startInput.value
+            ).currentTime;
+
+            const isConflict = bookings.some((booking) => {
+              const bookingStart = new Date(booking.start.dateTime);
+              const bookingEnd = new Date(booking.end.dateTime);
+              return (
+                currentTime > selectedStart &&
+                (currentTime >= bookingStart && currentTime < bookingEnd)
+              );
+            });
 
             if (currentTime <= selectedStart) {
               alert("Die Endzeit muss nach der Startzeit liegen!");
+              return;
+            }
+
+            if (isConflict) {
+              alert("Die ausgewählte Endzeit kollidiert mit bestehenden Terminen!");
               return;
             }
 
