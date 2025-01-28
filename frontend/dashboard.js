@@ -129,11 +129,6 @@ async function updateMeetings() {
     } else {
       currentEventContainer.querySelector("#current-title").textContent = "Aktuell kein Meeting";
       currentEventContainer.querySelector("#current-time").textContent = "";
-      currentEventContainer.querySelector("#current-organizer").textContent = "";
-
-      const attendeesContainer = currentEventContainer.querySelector("#current-attendees");
-      if (attendeesContainer) attendeesContainer.textContent = "Keine Teilnehmer";
-      
       currentEventContainer.classList.remove("hidden");
 
       if (futureEvents.length > 0) {
@@ -169,7 +164,7 @@ async function updateMeetings() {
 
       card.innerHTML = `
       <div>${dayDisplay}</div>
-      <div><strong>${truncateTitle(event.subject)}</strong></div>
+      <div style="font-size: 18px;"><strong>${truncateTitle(event.subject)}</strong></div>
       <div>${event.organizer.emailAddress.name}</div>
       <div>${formatTime(event.start.dateTime)} - ${formatTime(event.end.dateTime)}</div>
       <div class:"teilnehmer">${attendeeList}</div>

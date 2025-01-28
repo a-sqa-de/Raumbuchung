@@ -66,35 +66,22 @@ const fetchCalendarData = async () => {
 };
 
 // Funktion zum Speichern der Kalenderdaten in einer JSON-Datei
-const timeZoneBerlin = (dateTime) => {
-  const date = new Date(dateTime);
-
-  // Konvertiere die UTC-Zeit in die Berlin-Zeit
-  const options = { timeZone: 'Europe/Berlin', hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-  const formatter = new Intl.DateTimeFormat('de-DE', options);
-
-  // Extrahiere die umgestellte Zeit und baue eine ISO-Zeit daraus
-  const parts = formatter.formatToParts(date);
-  const adjustedDate = new Date(
-    `${parts.find(p => p.type === 'year').value}-${parts.find(p => p.type === 'month').value}-${parts.find(p => p.type === 'day').value}T${parts.find(p => p.type === 'hour').value}:${parts.find(p => p.type === 'minute').value}:${parts.find(p => p.type === 'second').value}`
-  );
-
-  return adjustedDate.toISOString();
-};
-
 const saveCalendarData = async () => {
   try {
     const events = await fetchCalendarData();
-
-    const adjustedEvents = events.map(event => ({
-      ...event,
-      start: { ...event.start, dateTime: timeZoneBerlin(event.start.dateTime) },
-      end: { ...event.end, dateTime: timeZoneBerlin(event.end.dateTime) },
-    }));
-
     const filePath = path.join(__dirname, '../Frontend/bookings.json');
-    fs.writeFileSync(filePath, JSON.stringify(adjustedEvents, null, 2));
+
+    // Schreibe die aktualisierten Daten in die Datei
+    fs.writeFileSync(filePath, JSON.stringify(events, null, 2));
     console.log('Kalenderdaten erfolgreich gespeichert.');
+
+    // Benachrichtige den Client über die neuen Daten
+    wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify({ type: 'events-data', data: events }));
+        console.log('Aktualisierte Daten an Client gesendet.');
+      }
+    });
   } catch (error) {
     console.error('Fehler beim Speichern der Kalenderdaten:', error.message);
   }
@@ -151,7 +138,7 @@ wss.on("connection", (ws, req) => {
   });
 
   ws.on("close", () => {
-    console.log("Client hat die Verbindung geschlossen.");
+    console.log("Client hat Verbindung geschlossen.");
   });
 
   ws.on("error", (error) => {
@@ -159,4 +146,4 @@ wss.on("connection", (ws, req) => {
   });
 });
 
-setInterval(saveCalendarData, 5 * 60 * 1000) // 5 * 60 Sekunden * 1000 Milkisekunden = 5 Minuten
+setInterval(saveCalendarData, 5 * 60 * 1000) // 5 * 60 Sekunden * 1000 Millisekunden = 5 Minuten

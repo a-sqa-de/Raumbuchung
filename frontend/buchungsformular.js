@@ -76,7 +76,7 @@ function createForm() {
   const attendeesField = createInputField(
     "Teilnehmer",
     "attendees",
-    "z.B. m.mustermann, m mustermann usw."
+    "z.B. m.mustermann, e.musterfrau, j.doe"
   );
   form.appendChild(attendeesField);
 
