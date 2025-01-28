@@ -44,18 +44,33 @@ const createEventInGraph = async (eventData) => {
   return response.data;
 };
 
+const getStartOfWeek = () => {
+  const now = new Date();
+  const dayOfWeek = now.getDay(); // 0 = Sonntag, 1 = Montag, ..., 6 = Samstag
+  const monday = new Date(now);  // Klone das aktuelle Datum
+  const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek; // Montag berechnen
+  monday.setDate(now.getDate() + diffToMonday); // Setze das Datum auf Montag
+  monday.setHours(0, 0, 0, 0); // Setze die Uhrzeit auf 00:00
+  return monday.toISOString();
+};
+
 const fetchCalendarData = async () => {
   try {
     const token = await getAccessToken(); // Zugriffstoken abrufen
     const headers = { Authorization: `Bearer ${token}` };
 
-    let events = [];
-    let endpoint = 'https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events';
+    // Beginn der aktuellen Woche berechnen
+    const startOfWeekISO = getStartOfWeek(); // Funktion oben definiert
 
+    // Filter für die API
+    const filter = `start/dateTime ge '${startOfWeekISO}'`;
+    let endpoint = `https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events?$filter=${encodeURIComponent(filter)}`;
+
+    let events = [];
     while (endpoint) {
       const response = await axios.get(endpoint, { headers });
-      events = events.concat(response.data.value);
-      endpoint = response.data['@odata.nextLink'] || null; // Nächste Seite abrufen, falls vorhanden
+      events = events.concat(response.data.value); // Füge die Ereignisse hinzu
+      endpoint = response.data['@odata.nextLink'] || null; // Prüfe, ob es eine nächste Seite gibt
     }
 
     return events;
@@ -64,6 +79,8 @@ const fetchCalendarData = async () => {
     throw error;
   }
 };
+
+
 
 // Funktion zum Speichern der Kalenderdaten in einer JSON-Datei
 const saveCalendarData = async () => {
