@@ -8,12 +8,11 @@ body {
   overflow-y: hidden; /* Kein vertikales Scrollen */
 }
 
-/* Header */
 header {
-  font-size: 1rem;
+  font-size: 1.25rem;
   background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,48 +21,47 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
 }
 
 /* Raum buchen Button im Header */
 .header-button {
   background-color: white;
   text-align: center;
-  width: 120px;
+  width: 8.75rem;
   color: #007bb5;
-  border: 2px solid #007bb5;
-  border-radius: 8px;
-  padding: 16px 60px;
+  border: 0.5rem solid #156488;
+  border-radius: 1rem;
+  padding: 1rem 3.75rem;
   cursor: pointer;
   font-weight: bold;
   position: relative;
-  margin-right: 100px;
+  margin-right: 6.25rem;
 }
 
 #form-container {
-  min-height: min-content;
-  width: 70%; /* Passt sich an den Bildschirm an */
-  padding: 10px; /* Mehr Polsterung */
+  min-height: max-content;
+  width: 80%; /* Passt sich an den Bildschirm an */
+  padding: 3.75rem;
   margin: auto; /* Zentriere das Formular horizontal */
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid #007bb5;
-  margin-top: 100px;
-  height: calc(80vh - 200px); /* 80% der View Hight - 200px */
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  border: 0.125rem solid #007bb5;
+  margin-top: 7.5rem;
 }
 
 /* Eingabefelder */
 .field-container {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .field-container label {
-  font-size: 14px;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .field-container notbold {
@@ -73,29 +71,28 @@ header {
 .field-container input,
 .field-container select {
   width: 95%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 0.625rem;
+  border: 0.0625rem solid #ced4da;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
   background-color: #f8f9fa;
 }
 
 .field-container input:focus,
 .field-container select:focus {
   border-color: #007bb5;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0.3125rem rgba(0, 123, 255, 0.25);
 }
 
-/* Submit-Button */
 .submit-button {
   display: block;
-  margin: 20px auto 0;
+  margin: 1.25rem auto 0;
   background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -111,61 +108,61 @@ header {
   color: white;
   text-align: center;
   font-size: 1.4rem;
-  padding: 5px;
-  border-radius: 12px; 
+  padding: 0.3125rem;
+  border-radius: 0.75rem;
   border-style: solid;
   border-color: #333;
-  margin: 90px auto 20px;
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
+  margin: 5.625rem auto 1.25rem;
+  box-shadow: 0.75rem 0.75rem 0.75rem rgba(0, 0, 0, 0.2);
 }
 
 /* Überschrift des Meetings */
 #current-meeting #current-title {
-  font-size: 1.5rem;
+  font-size: 2.1875rem;
   font-weight: bold;
-  margin-bottom: 2px; /* Reduziere den Abstand nach unten */
+  margin-bottom: 0.125rem;
 }
 
 /* Veranstalter */
 #current-meeting #current-organizer {
-  font-size: 1rem;
-  font-weight: normal;
-  margin-bottom: 20px; /* Reduziere den Abstand nach unten */
-  margin-top: 5px;
+  font-size: 1.625rem;
+  font-weight: large;
+  margin-bottom: 1.25rem;
+  margin-top: 0.3125rem;
 }
 
 /* Zeitangaben */
 #current-meeting #current-time {
-  font-size: 1rem;
+  font-size: 1.375rem;
   font-weight: normal;
-  margin-top: 20px; /* Reduziere den Abstand nach oben */
+  margin-top: 1.25rem;
   margin-bottom: 0; /* Entferne zusätzlichen Abstand nach unten */
 }
 
 #current-meeting #current-attendees {
-  font-size: 16px;
+  font-size: 1.25rem;
 }
 
 /* Allgemeine Kartenansicht */
 #card-view {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Mehr Abstand zwischen Karten */
-  padding: 10px;
+  gap: 1.875rem;
+  padding: 1.25rem;
   margin: 0 auto;
-  max-width: 800px;
-  max-height: calc(80vh - 800px);
+  max-width: 70%;
+  max-height: calc(80vh - 50rem);
 }
 
 /* zukünftige Event Karten */
 .event-card {
   background-color: #e2e6ea;
   color: #333;
-  padding: 20px;
-  margin-bottom: 50px;
-  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 3.125rem;
+  border-radius: 0.75rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.375rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: static;
 }
@@ -173,18 +170,18 @@ header {
 /* Toggle Button */
 #toggle-view {
   position: fixed;
-  width: 170px;
-  bottom: 70px;
-  right: 20px;
+  width: 10.625rem;
+  bottom: 4.375rem;
+  right: 1.25rem;
   background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
   z-index: 1000;
 }
@@ -192,25 +189,34 @@ header {
 #toggle-view:focus,
 #toggle-view:active {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
 }
 
 /* Kalenderansicht */
 #calendar-view {
   background-color: white;
+  font-size: 1.3rem;
   min-height: min-content;
-  padding: 10px;
-  border-radius: 12px;
-  margin: 140px auto 20px;
+  padding: 0.625rem;
+  border-radius: 0.75rem; 
+  margin: 8.75rem auto 1.25rem;
   max-width: 95%;
   overflow: hidden;
 }
 
+/* Umbrüche der Termine im Kalenderview "fullCalende-event-title" */
+.fc-event-title {
+  white-space: normal !important; /* Erlaubt Umbrüche */
+  word-wrap: break-word;         /* Bricht lange Wörter */
+  line-height: 1.2;              /* Optional: erhöht die Zeilenhöhe für bessere Lesbarkeit */
+  max-width: 100%;               /* Verhindert, dass der Text über die Grenzen hinausgeht */
+}
+
 footer {
-  font-size: 12px;
+  font-size: 0.75rem;
   background: linear-gradient(90deg, #007bb5, #005b8c);
   color: white;
-  padding: 10px;
+  padding: 0.625rem;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -219,24 +225,25 @@ footer {
 }
 
 #clock {
-  font-size: large;
+  font-size: 2rem;
+  font-family: initial;
 }
 
 .time-container {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .time-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr));
+  gap: 0.625rem;
 }
 .time-card {
   background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -252,12 +259,12 @@ footer {
 }
 
 .time-card {
-  background-color: #f9f9f9; /* Standardhintergrund */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
+  background-color: #f9f9f9;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
