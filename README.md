@@ -50,6 +50,36 @@ npm install axios
 ```
 Anmerkung: Wird für die POST und GET Anfragen an MS Graph benötigt. Ohne diese Bibliopthek können die entsprechenden Befehle nicht verarbeitet oder geändert werden.
 
+## Starten der Anwendung
+### Server starten
+1. Navigiere im Terminal einer Entwicklungsumgebung z.B. VSC in den Ordner .\backend. Beispiel: "C:\Users\User\OneDrive\Programme\Raumbuchung\backend".
+2. Führe folgenden Befehl dort aus
+```bash
+node websocket-server.js
+```    
+Das Terminal wird folgendes anzeigen: "WebSocket-Server läuft auf ws://localhost:5500" anzeigen. Wenn die Meldung erscheint läuft der Server.   
+Sollte hier etwas anderes erscheinen, kontrolliere ob das Verzeichnis korrekt aufgerufen wurde. 
+
+### Anwendung aufrufen
+Sobald der Server läuft, kann dieser über   
+- http://127.0.0.1:5500/frontend/dashboard.html
+aufgerufen werden. Der Port kann nach Bedarf im Skript geändert werden.
+
+### Server stopen
+Die Tastenkombination STRG + C beendet den Server. Dies ist nötig, wenn Änderungen an den Servereinstellungen vorgenommen werden z.B. setIntervall
+
+## Terminal Logs
+### Token und API
+Sobald der Server läuft, sollte der Token vom tokenManager.js abgerufen werden. Das kann durchaus bis zu 5 Minuten dauern. Sobald dieser geladen wurde, wird dieser auch im Terminal angezeigt, samt Gültigkeitsdauer. Dieser wird lokal in der Variablen "cachedToken" bzw. später unter "Token" gespeichert. Jeder REQUEST wird autom. durch den tokenManager verarbeitet.
+
+### Kalenderdaten erfolgreich gespeichert.
+Diese Meldung erscheint immer, wenn die booking.json überschrieben bzw. neu erstellt wurde. Dies geschieht alle 5 Minuten.
+
+### Neuer Client verbunden
+Diese Meldung erscheint, wenn das Formular zum buchen des Raumes geöffnet wird. Dies zeigt lediglich an, das der addEventlistener dem Formular jetzt zuhört und Terminreservierungen an MS Graph übermittelt, wenn der "Termin anlegen" Button geklickt wird
+
+### Client hat die Verbindung geschlossen
+Diese Meldung erscheint, wenn das Formular wieder geschlossen wurde. Dies kann durch das Verhalten von Nutzern entstehen, sowie auch durch das neuladen des Formulars. Dies passiert leider alle 5 Minuten, da dann die Buchungen neu geladen bzw. gespeichert werden und das Formular die neuen Daten verarbeiten möchte z.B. um geblockte Zeiten auszugrenzen.
 
 ## Fixed
 
@@ -73,5 +103,6 @@ Anscheinend verwendet Outlook in der Winterzeit weiterhin das UTC+2 Format, wär
 
 ## GUI
 - Formular passt sich "Landscape"-Ansicht noch nicht an
+- setIntervall lädt das Frmular neu. Dadurch gehen bereits getätigte Eingaben verloren
 
 
