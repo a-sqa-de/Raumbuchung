@@ -62,7 +62,7 @@ Sollte hier etwas anderes erscheinen, kontrolliere ob das Verzeichnis korrekt au
 
 ### Anwendung aufrufen
 Sobald der Server läuft, kann dieser über   
-- http://127.0.0.1:5500/frontend/dashboard.html
+- http://127.0.0.1:5500/frontend/dashboard.html      
 aufgerufen werden. Der Port kann nach Bedarf im Skript geändert werden.
 
 ### Server stopen
