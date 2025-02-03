@@ -163,4 +163,5 @@ wss.on("connection", (ws, req) => {
   });
 });
 
+saveCalendarData();
 setInterval(saveCalendarData, 5 * 60 * 1000) // 5 * 60 Sekunden * 1000 Millisekunden = 5 Minuten
