@@ -40,7 +40,7 @@ function getDayDisplay(dateStr) {
   if (dayDifference === 0) {
     return "";
   } else if (dayDifference === 1) {
-    return "(morgen)";
+    return "morgen";
   } else if (dayDifference > 1) {
     return `<em>in ${dayDifference} Tagen</em>`;
   }
