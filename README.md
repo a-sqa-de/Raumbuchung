@@ -118,18 +118,31 @@ Ein Reload passiert leider alle 5 Minuten, da die Buchungen von MS Graph neu gel
 
 ```mermaid
 sequenceDiagram
-WebSocket -->> TokenManager: Ich brauch einen Token
-TokenManager->>MS Auth: Ich brauch einen Token
-MS Auth->>TokenManager: Hier, dein Token
-TokenManager ->> WebSocket: Hier, dein Token
-WebSocket ->> MS Graph: Hier, mein Token. Gib Kalenderdaten!
-MS Graph ->> WebSocket: Hier, die Kalenderdaten
-WebSocket ->> Frontend: Hier, Daten
-Frontend ->> WebSocket: Raum buchen
-WebSocket ->> TokenManager: Raum buchen
 
-
-Note right of Frontend: Work in Progress
+Nutzer ->> WebSocket: Server starten
+WebSocket -->> TokenManager: saveCalenderData()
+TokenManager->>MS Auth: getAccessToken()
+MS Auth->>TokenManager: cachedToken
+TokenManager ->> WebSocket: cachedToken
+WebSocket ->> MS Graph: saveCalenderData()
+MS Graph ->> WebSocket: json_File
+WebSocket ->> JSON: booking.json
+Dashboard ->> JSON: updateMeeting()
+activate Dashboard
+JSON ->> Dashboard: 
+deactivate Dashboard
+Nutzer ->> Raum buchen: Raum buchen
+Raum buchen ->> JSON: loadAvailableTimes()
+activate Raum buchen
+JSON ->> Raum buchen: 
+deactivate Raum buchen
+Raum buchen ->> WebSocket: ws.onmessage
+WebSocket ->> MS Graph: Raum buchen
+MS Graph ->> WebSocket: message.type
+WebSocket ->> Raum buchen: message.type
+Nutzer ->> WebSocket: Server beenden
+	
+Note right of Raum buchen: Work in Progress
 
 ```
 ## Fixed
