@@ -54,12 +54,12 @@ const getStartOfWeek = () => {
   return monday.toISOString();
 };
 
-const getEndOfWeek = () => {
-  const monday = new Date(getStartOfWeek());
-  const sunday = new Date(monday);
-  sunday.setDate(monday.getDate() + 6);
-  sunday.setHours(23, 59, 59, 999);
-  return sunday.toISOString();
+const getEndOfMonth = () => {
+  const today = new Date();
+  today.setMonth(today.getMonth() + 1); // Nächster Monat
+  today.setDate(0); // Letzter Tag des aktuellen Monats
+  today.setHours(23, 59, 59, 999);
+  return today.toISOString();
 };
 
 const fetchCalendarData = async () => {
@@ -68,7 +68,7 @@ const fetchCalendarData = async () => {
     const headers = { Authorization: `Bearer ${token}` };
 
     const startOfWeekISO = getStartOfWeek();
-    const endOfWeekISO = getEndOfWeek();
+    const endOfMonthISO = getEndOfMonth();
 
     // Filter für Einzel- und Serientermine
     const filter = `type eq 'seriesMaster' or start/dateTime ge '${startOfWeekISO}'`;
@@ -87,7 +87,7 @@ const fetchCalendarData = async () => {
     let allInstances = [];
     for (let event of events) {
       if (event.type === "seriesMaster") {
-        let instanceEndpoint = `https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events/${event.id}/instances?startDateTime=${encodeURIComponent(startOfWeekISO)}&endDateTime=${encodeURIComponent(endOfWeekISO)}`;
+        let instanceEndpoint = `https://graph.microsoft.com/v1.0/users/0a4ce4b2-277d-4eb2-9455-4f60a3d2d47c/calendar/events/${event.id}/instances?startDateTime=${encodeURIComponent(startOfWeekISO)}&endDateTime=${encodeURIComponent(endOfMonthISO)}`;
         
         while (instanceEndpoint) {
           const instanceResponse = await axios.get(instanceEndpoint, { headers });
