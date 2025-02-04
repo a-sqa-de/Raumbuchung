@@ -109,22 +109,41 @@ const fetchCalendarData = async () => {
 // Funktion zum Speichern der Kalenderdaten in einer JSON-Datei
 const saveCalendarData = async () => {
   try {
-    const events = await fetchCalendarData();
+    const events = await fetchCalendarData(); // Neue Daten abrufen
     const filePath = path.join(__dirname, '../Frontend/bookings.json');
 
-    // Schreibe die aktualisierten Daten in die Datei
-    fs.writeFileSync(filePath, JSON.stringify(events, null, 2));
-    console.log('Kalenderdaten erfolgreich gespeichert.');
+    let existingData = [];
 
-    // Benachrichtige den Client über die neuen Daten
+    // Schritt 1: Vorhandene Datei prüfen & Daten einlesen
+    if (fs.existsSync(filePath)) {
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      if (fileContent) {
+        existingData = JSON.parse(fileContent);
+      }
+    }
+
+    // Schritt 2: Prüfen, ob die neuen Daten von den bestehenden abweichen
+    const isDifferent = JSON.stringify(existingData) !== JSON.stringify(events);
+
+    if (!isDifferent) {
+      console.log(" Keine Änderungen in den Kalenderdaten. Datei bleibt unverändert.");
+      return;
+    }
+
+    // Schritt 3: Daten überschreiben, weil sie sich geändert haben
+    fs.writeFileSync(filePath, JSON.stringify(events, null, 2));
+    console.log(" Kalenderdaten aktualisiert.");
+
+    // Schritt 4: WebSocket-Clients benachrichtigen
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
         client.send(JSON.stringify({ type: 'events-data', data: events }));
-        console.log('Aktualisierte Daten an Client gesendet.');
+        console.log(" Aktualisierte Daten an Client gesendet.");
       }
     });
+
   } catch (error) {
-    console.error('Fehler beim Speichern der Kalenderdaten:', error.message);
+    console.error(" Fehler beim Speichern der Kalenderdaten:", error.message);
   }
 };
 
